@@ -13,9 +13,10 @@
 **Comment avez-vous acquis ces compétences ?**
 
 - Formation initiale C.U.E.E.P (2005-2007)
+- Expérience A M F (2008-2015) : développement autonome d'une application intranet (PHP, MySQL, JavaScript, HTML/CSS) à partir de 2011
 - Formation M2i Java Full Stack (2018)
 - 6 années d'expérience professionnelle chez Altima/Accenture (2018-2024)
-- Veille technologique et projets personnels (2024-2026)
+- Veille technologique, projets personnels et activité freelance (2024-2026)
 
 ---
 
@@ -34,9 +35,10 @@
 
 **Projets personnels démontrables :**
 
-- 🌐 CV en ligne : https://cv.gregory-day.fr/ (Node.js/Express, responsive)
-- 🌐 Lexikos : https://lexikos.eu (Node.js/Express, React, Tailwind)
-- 📁 Dépôts GitHub personnels (à préciser)
+- 🌐 CV en ligne : https://cv.gregory-day.fr/ (Node.js/Express, React, MongoDB, interface d'administration, déploiement Docker)
+- 🌐 Lexikos : https://lexikos.eu (Node.js/Express, React, Tailwind, MongoDB, intégration IA Mistral)
+- 🌐 Wanderline : https://wanderline.gregory-day.fr (repo afterLook — Node.js/Express, React, MongoDB, TDD, e2e Playwright, Docker)
+- 📁 Dépôts GitHub personnels correspondants (historique, PR, CI/CD)
 
 ---
 
@@ -155,7 +157,7 @@ Tous les sites e-commerce développés devaient être parfaitement adaptatifs po
 ### Description des activités
 
 **Contexte :**
-8,5 années d'expérience en JavaScript, utilisé quotidiennement sur tous les projets, avec une montée en compétence sur TypeScript lors des projets headless.
+Plus de 10 ans de pratique de JavaScript (premiers développements professionnels chez A M F dès 2011, puis quotidiennement chez Altima/Accenture et sur les projets personnels), avec une montée en compétence sur TypeScript lors des projets headless.
 
 **Actions réalisées :**
 
@@ -211,14 +213,14 @@ Les sites e-commerce nécessitent des interactions fluides sans rechargement de 
 
 ## C6 : Bibliothèques et frameworks modernes (React, Vue.js, etc.)
 
-**Niveau de maîtrise : 3** ⭐⭐⭐
+**Niveau de maîtrise : 4** ⭐⭐⭐⭐
 
-> Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
+> Réalisé avec aisance, en autonomie totale
 
 ### Description des activités
 
 **Contexte :**
-Montée en compétence progressive sur les frameworks modernes, d'abord en contexte professionnel (Vue.js/Nuxt.js) puis en formation autonome (React).
+Montée en compétence progressive sur les frameworks modernes, d'abord en contexte professionnel (Vue.js/Nuxt.js), puis en autonomie complète sur React avec trois applications complètes en production.
 
 **Actions réalisées :**
 
@@ -227,21 +229,17 @@ Montée en compétence progressive sur les frameworks modernes, d'abord en conte
   - Modifications et optimisations des composants Vue.js sur Trëmma.co et Brico Marché
   - Utilisation de GraphQL pour les échanges de données
 
-- **React (1,2 an) :**
-  - Formation intensive et autonome (2024-2025)
-  - Réalisation de plusieurs projets pratiques personnels
-  - Maîtrise des hooks, du state management et du cycle de vie des composants
+- **React (depuis 2024) :**
+  - Formation intensive et autonome (Udemy — hooks, routing, Redux, bases de Next.js)
+  - Trois applications React complètes conçues, développées et déployées en production en autonomie totale :
+    - **MyWebCV** (2024-2026) : CV interactif avec interface d'administration sur mesure
+    - **Lexikos** (2025-2026) : quiz interactifs, système de répétition espacée
+    - **Wanderline** (2026) : carnets de voyage, carte interactive, frise chronologique
+  - Maîtrise des hooks, du state management, du cycle de vie des composants, tests front avec Vitest
 
 - **jQuery (2,7 ans) :**
   - Utilisation sur les projets SiteGenesis (Picard, Camaïeu)
 
-**Résultats / Preuves :**
-
-- POC headless fonctionnel démontrant l'architecture moderne
-- Projets React personnels opérationnels
-- Montée en compétence rapide et autonome
-
-**Rôle occupé :**
 **Résultats observés :**
 
 - POC headless fonctionnel démontrant l'architecture moderne
@@ -251,13 +249,13 @@ Montée en compétence progressive sur les frameworks modernes, d'abord en conte
 **Preuves disponibles :**
 
 - ✅ Lexikos : https://lexikos.eu (React + Tailwind, projet complet en production)
-- ✅ Autres projets React personnels sur GitHub (à lister)
+- ✅ Wanderline : https://wanderline.gregory-day.fr (React, projet complet en production)
+- ✅ MyWebCV : https://cv.gregory-day.fr/ (React, interface d'administration)
 - ⚠️ POC SFCC headless, Trëmma, Brico Marché : témoignage possible (NDA)
 
 ---
 
 ## 📋 À compléter
 
-1. **Lister vos projets GitHub** : Quels dépôts publics peuvent servir de preuve ?
-2. **Préparer les attestations** : Identifier 1-2 anciens collègues pour une attestation générale
-3. **Score Lighthouse** : Faire un audit de votre CV en ligne pour avoir des métriques concrètes
+1. **Préparer les attestations** : Identifier 1-2 anciens collègues pour une attestation générale
+2. **Score Lighthouse** : Faire un audit du CV en ligne et de Wanderline pour avoir des métriques concrètes

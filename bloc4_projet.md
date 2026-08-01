@@ -7,13 +7,15 @@
 - Pratique de la méthodologie Agile/Scrum (6 ans)
 - Participation aux rituels agiles (daily, sprint planning, rétrospectives)
 - Revue de code quotidienne
-- Utilisation d'outils qualité (ESLint, Prettier)
-- Contribution à l'analyse des besoins et aux spécifications techniques
+- Tests automatisés (TDD, tests unitaires, d'intégration et end-to-end)
+- Utilisation d'outils qualité (ESLint, Prettier, Husky, couverture de code en CI)
+- Analyse des besoins, cadrage et conduite de projets en autonomie (freelance)
 
 **Comment avez-vous acquis ces compétences ?**
 
 - 6 années d'expérience professionnelle chez Altima/Accenture (2018-2024) - Scrum, Jira, code reviews
-- Projets personnels (2024-2026) - documentation, qualité de code
+- Formation Octo Academy « Pratiques de dev de qualité » (2020) - TDD
+- Projets personnels et freelance (2024-2026) - conduite de projet en autonomie, tests automatisés, documentation, qualité de code
 
 ---
 
@@ -44,10 +46,14 @@ Participation régulière aux réunions de recueil des besoins clients chez Acce
 
 **Actions réalisées :**
 
-- Participation aux réunions avec les clients pour comprendre leurs besoins
-- Écoute et reformulation des demandes fonctionnelles
-- Identification des contraintes techniques liées aux demandes
-- Transmission des informations à l'équipe de développement
+- **Chez Accenture :**
+  - Participation aux réunions avec les clients pour comprendre leurs besoins
+  - Écoute et reformulation des demandes fonctionnelles
+  - Identification des contraintes techniques liées aux demandes
+  - Transmission des informations à l'équipe de développement
+
+- **En freelance (2024-2026) :**
+  - Analyse des besoins et définition des fonctionnalités en autonomie complète pour chaque projet (Lexikos, WebCV, Wanderline) : identification des utilisateurs cibles, priorisation des fonctionnalités, arbitrages périmètre/effort
 
 **Résultats observés :**
 
@@ -77,7 +83,8 @@ Contribution ponctuelle à l'évaluation technique, sans être responsable des �
 - Évaluation informelle de la complexité des tâches lors des sprint plannings
 - Estimation du temps de développement (story points)
 - Identification des risques techniques lors des discussions d'équipe
-- Pas d'études de faisabilité formalisées
+- Pas d'études de faisabilité formalisées en entreprise
+- En freelance : évaluation de faisabilité en autonomie avant chaque projet (choix de stack, effort estimé, risques techniques — ex. géolocalisation EXIF sur Wanderline), mais sans formalisation écrite systématique
 
 **Résultats observés :**
 
@@ -275,6 +282,10 @@ Pratique quotidienne des code reviews pendant 6 ans chez Accenture.
   - Prettier pour le formatage automatique
   - Respect des conventions de code de l'équipe
 
+- **Sur les projets personnels (Wanderline) :**
+  - Hook pre-commit (Husky) qui lance automatiquement lint, formatage et tests backend avant chaque commit
+  - Relecture systématique du diff de chaque pull request avant fusion (76+ PR), avec la CI comme garde-fou
+
 **Résultats observés :**
 
 - Code de meilleure qualité
@@ -283,78 +294,85 @@ Pratique quotidienne des code reviews pendant 6 ans chez Accenture.
 
 **Preuves disponibles :**
 
-- ✅ Configuration ESLint/Prettier visible sur les projets GitHub
+- ✅ Configuration ESLint/Prettier/Husky visible sur les projets GitHub
+- ✅ Historique des pull requests sur le dépôt afterLook/Wanderline
 - ⚠️ Code reviews GitLab : témoignage possible (NDA)
 
 ---
 
 ## C34 : Tests automatisés
 
-**Niveau de maîtrise : 2** ⭐⭐
+**Niveau de maîtrise : 3** ⭐⭐⭐
 
-> Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
+> Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
 ### Description des activités
 
 **Contexte :**
-Formation aux tests automatisés mais mise en pratique limitée.
+Formation Octo Academy « Pratiques de dev de qualité » (TDD, 2020), puis pratique systématique du TDD et des tests automatisés sur les projets personnels récents.
 
 **Actions réalisées :**
 
-- Apprentissage des concepts et frameworks de test (Jest, Mocha)
-- Compréhension des types de tests (unitaires, intégration, e2e)
-- Tests manuels systématiques
-- Pas de suite de tests automatisés implémentée sur les projets personnels
+- **Wanderline — développement piloté par les tests (TDD) :**
+  - Tests unitaires et d'intégration backend : Jest + Supertest, base MongoDB en mémoire (~50 fichiers de tests)
+  - Tests unitaires frontend : Vitest
+  - Tests end-to-end : 18 scénarios Playwright couvrant les parcours utilisateur complets (login/logout, édition d'articles, upload de photos, partage, sauvegarde/restauration, administration…)
+  - Mesure de la couverture de code dans la CI
+- **Lexikos :** tests Jest des services backend
+- Exécution automatique : hook pre-commit (Husky) + pipeline GitHub Actions où les trois familles de tests sont bloquantes avant déploiement
+- Prise en compte des contraintes techniques : caches CI pour maîtriser la durée des pipelines, tests isolés et reproductibles
 
 **Résultats observés :**
 
-- Compréhension théorique solide
-- Mise en pratique à approfondir
+- Fiabilité des livraisons : aucune mise en production sans tests verts
+- Refactorisations sereines grâce au filet de sécurité
 
 **Preuves disponibles :**
 
-- ⚠️ Compétence à renforcer
-- 📋 À faire : implémenter des tests sur Lexikos
+- ✅ Suites de tests (unitaires, intégration, e2e) visibles dans les dépôts
+- ✅ Runs CI avec tests dans l'historique GitHub Actions
+- ✅ Certification Octo Academy « Pratiques de dev de qualité » (TDD)
 
 ---
 
 ## C35 : Documentation technique et partage des connaissances
 
-**Niveau de maîtrise : 2** ⭐⭐
+**Niveau de maîtrise : 3** ⭐⭐⭐
 
-> Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
+> Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
 ### Description des activités
 
 **Contexte :**
-Rédaction de documentation ponctuelle, sans utilisation de plateformes collaboratives dédiées.
+Documentation systématique des projets personnels : mise en route, méthodologie, exploitation et dépannage.
 
 **Actions réalisées :**
 
-- Rédaction de fichiers README pour les projets
-- Documentation technique ponctuelle (procédures, guides)
-- Commentaires dans le code
-- Pas d'utilisation de Confluence ou wikis d'équipe
+- **README structurés** sur chaque projet : concept, stack, méthodologie (TDD/SOLID sur Wanderline), commandes de développement/production/administration, configuration de l'environnement
+- **Guides d'exploitation dédiés** : guides de configuration et de diagnostic MongoDB sur Lexikos (MONGODB_LOCAL_SETUP.md, MONGODB_DIAGNOSTIC_GUIDE.md), scripts de diagnostic commentés
+- **Documentation des conventions pour les assistants IA** (CLAUDE.md) : standards de code et méthodologie du projet, exploitables par tout contributeur — une forme moderne de partage des connaissances
+- Suivi des évolutions dans un TODO.md versionné
+- Commentaires dans le code réservés aux contraintes non évidentes
 
 **Résultats observés :**
 
-- Documentation basique présente
-- Pas de pratique de documentation collaborative structurée
+- Tout le nécessaire pour installer, lancer, tester, déployer et dépanner chaque projet est dans le dépôt
+- Reprise du projet possible par un tiers sans transmission orale
 
 **Preuves disponibles :**
 
-- ✅ README visibles sur les dépôts GitHub
-- 📋 À améliorer : enrichir la documentation de Lexikos
+- ✅ README, guides et documentation de méthodologie visibles sur les dépôts GitHub
+- 📋 Marge de progression : pratique d'une plateforme collaborative d'équipe (Confluence, wiki) — expérience Jira/Confluence côté Accenture attestable par témoignage
 
 ---
 
 ## 📋 Actions à mener pour renforcer le dossier
 
-| Compétence              | Action                                              | Priorité |
-| ----------------------- | --------------------------------------------------- | -------- |
-| **C34** (Tests)         | Implémenter des tests Jest sur Lexikos              | Haute    |
-| **C35** (Documentation) | Enrichir les README + ajouter un wiki/docs          | Moyenne  |
-| **C27-C28** (Specs)     | Rédiger une spec technique pour une feature Lexikos | Basse    |
+| Compétence              | Action                                                        | Priorité | Statut     |
+| ----------------------- | ------------------------------------------------------------- | -------- | ---------- |
+| **C27-C28** (Specs)     | Rédiger une spec technique/note de cadrage pour une feature   | Moyenne  | ⏳ À faire |
+| **C34** (Tests)         | ~~Implémenter des tests automatisés~~                          | -        | ✅ Fait    |
+| **C35** (Documentation) | ~~Enrichir les README + documentation~~                        | -        | ✅ Fait    |
 
 > 💡 **Point fort :** Vos 6 ans de pratique Scrum et de code reviews quotidiennes sont des atouts majeurs. Même sans preuve matérielle, vous pouvez en parler en détail lors de l'entretien avec le jury.
 

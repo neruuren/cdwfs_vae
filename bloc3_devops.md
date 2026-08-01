@@ -4,16 +4,17 @@
 
 **Connaissances, compétences et aptitudes mobilisées :**
 
-- Maîtrise de Git et des workflows collaboratifs (GitLab, GitHub)
-- Mise en place de CI/CD avec GitHub Actions
+- Maîtrise de Git et des workflows collaboratifs (GitLab, GitHub, branches/PR)
+- Conception de pipelines CI/CD complets avec GitHub Actions (tests bloquants puis déploiement)
+- Conteneurisation Docker (Dockerfile, docker-compose) en production
 - Configuration et administration de VPS (Scaleway, OVH)
 - Compréhension des architectures monolithiques et headless
-- Notions de conteneurisation (Docker)
+- Automatisation de la veille avec n8n auto-hébergé
 
 **Comment avez-vous acquis ces compétences ?**
 
 - 6 années d'expérience professionnelle chez Altima/Accenture (2018-2024) - GitLab, SFCC Cloud
-- Projets personnels (2024-2026) - GitHub, GitHub Actions, VPS, déploiement automatisé
+- Projets personnels et freelance (2024-2026) - GitHub, GitHub Actions, Docker, VPS, déploiement automatisé
 
 ---
 
@@ -31,9 +32,11 @@
 
 **Projets personnels démontrables :**
 
-- 🌐 Lexikos : https://lexikos.eu (hébergé sur VPS OVH, CI/CD GitHub Actions)
-- 🌐 CV en ligne : https://cv.gregory-day.fr/ (hébergé sur VPS Scaleway, CI/CD GitHub Actions)
-- 📁 Dépôts GitHub avec historique et workflows
+- 🌐 Lexikos : https://lexikos.eu (hébergé sur VPS, MongoDB Dockerisé, CI/CD GitHub Actions)
+- 🌐 CV en ligne : https://cv.gregory-day.fr/ (hébergé sur VPS, déploiement Docker automatisé)
+- 🌐 Wanderline : https://wanderline.gregory-day.fr (CI complète : tests backend + frontend + e2e Playwright bloquants, puis déploiement rsync + docker compose sur VPS)
+- ⚙️ n8n auto-hébergé sur VPS (automatisation de la veille technologique)
+- 📁 Dépôts GitHub avec historique, pull requests et workflows
 
 ---
 
@@ -168,6 +171,7 @@ Utilisation quotidienne de Git depuis plus de 6 ans.
   - Gestion de l'historique des modifications
   - Utilisation des tags pour les versions
   - Commits atomiques
+  - Workflow par branches de fonctionnalité même en solo (Wanderline : 76+ pull requests mergées)
 
 **Résultats observés :**
 
@@ -201,17 +205,18 @@ Expérience des workflows collaboratifs en entreprise, simplifiés sur les proje
   - Branches par feature/bugfix
 
 - **Projets personnels (GitHub) :**
-  - GitHub Actions pour l'intégration continue
-  - Déploiement automatisé sur push
-  - Travail principalement sur main (développeur unique)
+  - Workflow par branches de fonctionnalité et pull requests, y compris en développeur unique (Wanderline : 76+ PR mergées)
+  - GitHub Actions déclenché sur les PR : les tests (backend, frontend, e2e) doivent passer avant la fusion
+  - Résolution de conflits lors des rebases/merges de branches
 
 **Résultats observés :**
 
-- Code intégré de manière contrôlée en entreprise
-- Déploiement automatisé sur les projets personnels
+- Code intégré de manière contrôlée, en entreprise comme sur les projets personnels
+- Aucune fusion possible avec des tests en échec
 
 **Preuves disponibles :**
 
+- ✅ Historique des pull requests et des runs CI visibles sur le dépôt afterLook/Wanderline
 - ✅ Workflows GitHub Actions visibles sur les dépôts
 - ⚠️ Merge Requests GitLab : témoignage possible (NDA)
 
@@ -219,33 +224,32 @@ Expérience des workflows collaboratifs en entreprise, simplifiés sur les proje
 
 ## C23 : Développement d'environnements virtualisés (Docker)
 
-**Niveau de maîtrise : 2** ⭐⭐
+**Niveau de maîtrise : 3** ⭐⭐⭐
 
-> Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
+> Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
 ### Description des activités
 
 **Contexte :**
-Connaissance partielle de Docker, utilisation occasionnelle.
+Conteneurisation de mes applications personnelles, utilisées quotidiennement en production.
 
 **Actions réalisées :**
 
-- Compréhension des concepts :
-  - Images, conteneurs, volumes
-  - Dockerfile, docker-compose
-- Utilisation ponctuelle :
-  - Lancement de conteneurs pour des services (bases de données, outils)
-  - Pas de conteneurisation de mes propres applications en production
+- **Wanderline et WebCV :** écriture des Dockerfile, docker-entrypoint.sh et docker-compose.yml ; les applications tournent en production dans des conteneurs (backend Node.js + MongoDB)
+- **Lexikos :** MongoDB conteneurisé en production (docker-compose), sauvegardes exécutées dans le conteneur
+- Reconstruction et redémarrage automatisés des conteneurs à chaque déploiement (`docker compose up -d --build` piloté par la CI)
+- Gestion des volumes (persistance MongoDB, uploads), des variables d'environnement et du nettoyage des images obsolètes (`docker image prune` en fin de pipeline)
+- n8n déployé en auto-hébergé sur VPS
 
 **Résultats observés :**
 
-- Capacité à utiliser Docker pour des cas simples
-- Pas d'expérience de production avec Docker
+- Environnements reproductibles entre développement et production
+- Déploiements standardisés sur tous les projets
 
 **Preuves disponibles :**
 
-- ⚠️ Compétence à renforcer
-- 📋 À faire : conteneuriser Lexikos ou WebCV avec Docker
+- ✅ Dockerfile et docker-compose.yml visibles dans les dépôts (afterLook/Wanderline, my_nodejs_webcv, Lexikos)
+- ✅ Applications conteneurisées accessibles en production
 
 ---
 
@@ -280,48 +284,50 @@ Pas d'expérience avec les orchestrateurs de conteneurs.
 
 ## C25 : Automatisation du déploiement (DevOps, CI/CD)
 
-**Niveau de maîtrise : 3** ⭐⭐⭐
+**Niveau de maîtrise : 4** ⭐⭐⭐⭐
 
-> Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
+> Réalisé avec aisance, en autonomie totale
 
 ### Description des activités
 
 **Contexte :**
-Mise en place de pipelines CI/CD pour les projets personnels.
+Conception en autonomie totale de pipelines CI/CD complets pour les trois projets personnels en production.
 
 **Actions réalisées :**
 
-- **GitHub Actions :**
-  - Configuration de workflows de déploiement automatisé
-  - Déclenchement sur push vers main
-  - Connexion SSH au VPS pour le déploiement
-  - Installation des dépendances et redémarrage des services
+- **Pipeline complet sur Wanderline (GitHub Actions) :**
+  - 4 jobs : tests backend (Jest + couverture), tests frontend (Vitest + couverture), tests e2e (Playwright avec build du front), puis déploiement conditionné à la réussite des trois jobs de test
+  - Optimisations : cache npm, cache des binaires mongodb-memory-server, installation ciblée du navigateur Chromium pour Playwright
+  - Déploiement : connexion SSH sécurisée (ssh-agent + secrets GitHub), synchronisation rsync excluant les `.env` de production, reconstruction des conteneurs (`docker compose up -d --build`), nettoyage des images
+  - Déclenchement sur push, sur pull request (tests seuls) et manuel (workflow_dispatch)
+
+- **Lexikos et WebCV :** workflows de déploiement automatisé équivalents, adaptés à chaque projet
 
 - **Scripts d'automatisation :**
-  - Scripts bash pour les tâches répétitives
-  - Automatisation des mises à jour
+  - Scripts bash pour les tâches répétitives (sauvegardes cron, migrations, promotion admin)
+  - Automatisation de la veille technologique avec n8n auto-hébergé
 
 **Résultats observés :**
 
-- Déploiement en un push
-- Réduction des erreurs humaines
+- Déploiement en un push, impossible si les tests échouent
+- Réduction des erreurs humaines, secrets jamais exposés dans le dépôt
 - Gain de temps significatif
 
 **Preuves disponibles :**
 
 - ✅ Fichiers .github/workflows/ visibles sur les dépôts
-- ✅ Historique des déploiements sur GitHub Actions
+- ✅ Historique des runs (tests + déploiements) sur GitHub Actions
 
 ---
 
 ## 📋 Actions à mener pour renforcer le dossier
 
-| Compétence           | Action                                                | Priorité |
-| -------------------- | ----------------------------------------------------- | -------- |
-| **C23** (Docker)     | Créer un Dockerfile pour Lexikos ou WebCV             | Moyenne  |
-| **C24** (Kubernetes) | Tutoriel/formation basique (optionnel pour niveau 6)  | Basse    |
-| **C21-C22** (Git)    | Reprendre l'habitude des branches sur un projet perso | Basse    |
+| Compétence           | Action                                                    | Priorité | Statut     |
+| -------------------- | --------------------------------------------------------- | -------- | ---------- |
+| **C24** (Kubernetes) | Tutoriel/formation basique (optionnel pour niveau 6)       | Basse    | ⏳ Optionnel |
+| **C23** (Docker)     | ~~Créer un Dockerfile pour Lexikos ou WebCV~~              | -        | ✅ Fait    |
+| **C21-C22** (Git)    | ~~Reprendre l'habitude des branches sur un projet perso~~  | -        | ✅ Fait (76+ PR sur Wanderline) |
 
-> 💡 **Point positif :** Vos workflows GitHub Actions sont une excellente preuve de compétence DevOps. C'est exactement ce qui est attendu pour l'automatisation du déploiement.
+> 💡 **Point fort du bloc :** le pipeline CI/CD de Wanderline (tests unitaires + intégration + e2e bloquants, puis déploiement Docker automatisé) est une démonstration complète de la chaîne DevOps attendue.
 
-> 📝 **Note sur C24 (Kubernetes) :** Pour un titre niveau 6, l'orchestration de conteneurs n'est généralement pas une compétence critique. Une connaissance théorique suffit souvent. Concentrez vos efforts sur les compétences plus impactantes.
+> 📝 **Note sur C24 (Kubernetes) :** Pour un titre niveau 6, l'orchestration de conteneurs n'est généralement pas une compétence critique. Une connaissance théorique suffit souvent. Vous pouvez par ailleurs expliquer au jury pourquoi docker-compose est le bon choix à l'échelle de vos projets (arbitrage coût/complexité).
