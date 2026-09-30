@@ -1,35 +1,43 @@
 # BLOC 4 : Gérer les projets numériques et collaborer à l'amélioration continue des systèmes d'information
 
+> Sources recoupées le 2026-09-30 : CV en ligne (https://cv.gregory-day.fr/api/resume.json) et dépôt `neruuren/lexikos`.
+> Les mentions `[À CONFIRMER]` signalent une affirmation que ni le CV ni les dépôts ne confirment. Elles sont listées en fin de fichier.
+
 ## Synthèse du bloc
 
 **Connaissances, compétences et aptitudes mobilisées :**
 
-- Pratique de la méthodologie Agile/Scrum (6 ans)
-- Participation aux rituels agiles (daily, sprint planning, rétrospectives)
-- Revue de code quotidienne
-- Tests automatisés (TDD, tests unitaires, d'intégration et end-to-end)
-- Utilisation d'outils qualité (ESLint, Prettier, Husky, couverture de code en CI)
-- Analyse des besoins, cadrage et conduite de projets en autonomie (freelance)
+- Recueil et analyse des besoins, conduite de projet de bout en bout en autonomie
+- Méthode Scrum en équipe, organisation itérative en solo
+- Suivi d'indicateurs : coûts d'IA, usage, capacité, performance
+- Qualité du code : ESLint, Prettier, hooks de pré-commit, audits de sécurité et d'accessibilité
+- Tests automatisés : unitaires, intégration, bout en bout, charge
+- Documentation technique : README, runbooks, rapports de mesure, conventions pour les agents IA
+- Veille technologique automatisée, en grande partie sur des sources anglophones
+- Savoir-être indiqués sur mon CV : rigueur, méthode, priorisation, pragmatisme, analyse, sang-froid
 
 **Comment avez-vous acquis ces compétences ?**
 
-- 6 années d'expérience professionnelle chez Altima/Accenture (2018-2024) - Scrum, Jira, code reviews
-- Formation Octo Academy « Pratiques de dev de qualité » (2020) - TDD
-- Projets personnels et freelance (2024-2026) - conduite de projet en autonomie, tests automatisés, documentation, qualité de code
+| Période | Source |
+|---|---|
+| 2011–2015 | A M F : je repère un besoin, je conçois et je fais adopter un outil de mon initiative |
+| 2018 | M2i Formation : UML, Scrum, projet de billetterie de concerts réalisé en équipe |
+| 2018–2024 | Altima/Accenture : travail en équipe projet sur des sites e-commerce |
+| 2020 | Octo Academy « Pratiques de dev de qualité » : TDD |
+| 2025–aujourd'hui | Lexikos : conduite complète d'un projet en production, du besoin à l'exploitation |
 
 ---
 
 ## ⚠️ Note sur les preuves et la confidentialité
 
-**Contrainte professionnelle :** Durant mes 6 années chez Altima/Accenture, j'ai travaillé exclusivement sur des projets clients soumis à des clauses de confidentialité strictes (NDA). À chaque fin de mission, j'étais contractuellement tenu de supprimer tout document, code source ou capture d'écran relatif aux projets.
+Chez Altima/Accenture, je travaille sous clause de confidentialité. Les outils de suivi et les spécifications des clients ne sont pas accessibles. Je démontre la conduite de projet et la qualité sur Lexikos.
 
-**Ce que je peux fournir comme preuves :**
 | Type de preuve | Disponibilité |
-|----------------|---------------|
-| **Projets personnels** | ✅ Code source avec ESLint/Prettier, README |
-| **Témoignages d'anciens collègues** | ⚠️ Attestations sur la pratique Scrum et code reviews |
-| **Historique Jira / Confluence** | ❌ Non disponible (NDA) |
-| **Specs techniques clients** | ❌ Non disponible (NDA) |
+|---|---|
+| Dépôt Lexikos : configurations qualité, tests, rapports de mesure, runbooks, suivi des coûts d'IA | ✅ |
+| Certificat Octo Academy | ✅ |
+| Attestations d'anciens collègues sur la pratique en équipe | ⚠️ À obtenir |
+| Outils de suivi et spécifications des clients | ❌ NDA |
 
 ---
 
@@ -39,31 +47,34 @@
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** sur Lexikos et chez A M F, j'identifie seul le besoin et je définis les fonctionnalités. Chez Accenture, je contribue à la compréhension du besoin client.
 
-**Contexte :**
-Participation régulière aux réunions de recueil des besoins clients chez Accenture.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Contexte :** je pars d'un constat personnel. En regardant des films et des séries en anglais, on rencontre des mots qu'on oublie aussitôt.
 
-- **Chez Accenture :**
-  - Participation aux réunions avec les clients pour comprendre leurs besoins
-  - Écoute et reformulation des demandes fonctionnelles
-  - Identification des contraintes techniques liées aux demandes
-  - Transmission des informations à l'équipe de développement
+**Ce que j'ai fait :**
+- Je définis le besoin : noter un mot rencontré, en obtenir la traduction, puis le mémoriser par des quiz et la répétition espacée.
+- J'élargis ensuite le public à 4 langues d'interface : anglais, français, allemand, espagnol.
+- J'ouvre une bêta à nombre de participants plafonné, réglable dans l'administration, pour tester le produit sur de vrais utilisateurs.
+- Je recueille les retours avec un formulaire de feedback stocké en base.
+- J'observe l'usage réel avec une télémétrie d'interface anonyme et un tableau d'analytics.
+- J'enrichis le produit par itérations : prononciation, conversation avec un tuteur IA, découverte de mots, dimension ludique. Le lien précis entre les retours et ces choix reste à documenter `[À CONFIRMER]`.
 
-- **En freelance (2024-2026) :**
-  - Analyse des besoins et définition des fonctionnalités en autonomie complète pour chaque projet (Lexikos, WebCV, Wanderline) : identification des utilisateurs cibles, priorisation des fonctionnalités, arbitrages périmètre/effort
+**Recul :** je n'ai pas formalisé de personas ni d'entretiens utilisateurs écrits. C'est un point à renforcer.
 
-**Résultats observés :**
+### Situation 2 : A M F (2011–2015) et Altima/Accenture (2018–2024)
 
-- Compréhension claire des attentes clients
-- Traduction des besoins en tâches techniques
+- **A M F :** sur la plateforme d'assistance technique de la maintenance Auchan, j'identifie un problème : les informations circulent mal entre techniciens et prestataires. Je conçois un outil intranet qui uniformise les communications. Il améliore la productivité et la satisfaction des appelants et des prestataires.
+- **Picard :** le besoin de l'équipe marketing est de gagner en autonomie. Je conçois des pages personnalisables avec Page Designer.
+- Je participe aux réunions de recueil des besoins avec les clients `[À CONFIRMER]`.
 
-**Preuves disponibles :**
+### Preuves
 
-- ⚠️ Témoignage possible d'anciens collègues
-- ✅ Capacité à décrire le processus en entretien
+| Preuve | Type | Accès |
+|---|---|---|
+| Modèles `Feedback`, `UiEvent`, réglage `betaMaxParticipants`, tableau `/admin/analytics` | Code | ✅ dépôt Lexikos |
+| Outil A M F et évolution de poste | CV, témoignage | ⚠️ |
 
 ---
 
@@ -73,28 +84,27 @@ Participation régulière aux réunions de recueil des besoins clients chez Acce
 
 > Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
 
-### Description des activités
+**Place occupée :** j'évalue seul la faisabilité de mes projets, mais sans étude écrite formelle.
 
-**Contexte :**
-Contribution ponctuelle à l'évaluation technique, sans être responsable des études de faisabilité formelles.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'évalue le coût des fonctions d'IA avant de les ouvrir. Je renseigne le tarif par million de tokens de chaque modèle (`backend/config/aiPricing.js`), puis je mesure la consommation réelle.
+- J'évalue la faisabilité de la synthèse vocale. Je choisis Piper, auto-hébergé, et je documente ses contraintes : un processus par langue, mémoire d'échange, licences des voix.
+- Je vérifie par des tests de charge que l'infrastructure supporte le public visé.
 
-- Évaluation informelle de la complexité des tâches lors des sprint plannings
-- Estimation du temps de développement (story points)
-- Identification des risques techniques lors des discussions d'équipe
-- Pas d'études de faisabilité formalisées en entreprise
-- En freelance : évaluation de faisabilité en autonomie avant chaque projet (choix de stack, effort estimé, risques techniques — ex. géolocalisation EXIF sur Wanderline), mais sans formalisation écrite systématique
+**Recul :** ces évaluations sont réelles mais dispersées dans le code et les rapports. Il me manque un document de faisabilité unique, rédigé avant de lancer une fonctionnalité.
 
-**Résultats observés :**
+### Situation 2 : Altima/Accenture
 
-- Contribution à l'estimation collective
-- Alertes sur les difficultés techniques anticipées
+- J'estime la complexité des tâches lors de la planification des sprints `[À CONFIRMER]`.
+- Je signale les risques techniques dans un contexte de dette technique importante (Camaïeu, Picard).
 
-**Preuves disponibles :**
+### Preuves
 
-- ⚠️ Compétence exercée de manière informelle
-- ⚠️ Témoignage possible d'anciens collègues
+| Preuve | Type | Accès |
+|---|---|---|
+| `backend/config/aiPricing.js`, `deploy/PIPER_TTS_RUNBOOK.md`, `loadtest/CAPACITE.md` | Code et documentation | ✅ dépôt Lexikos |
 
 ---
 
@@ -104,27 +114,22 @@ Contribution ponctuelle à l'évaluation technique, sans être responsable des �
 
 > Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
 
-### Description des activités
+**Place occupée :** en équipe, je contribue aux spécifications sans en être le rédacteur principal.
 
-**Contexte :**
-Contribution à l'élaboration des spécifications techniques sans en être le rédacteur principal.
+### Situations
 
-**Actions réalisées :**
+- **M2i (2018) :** je modélise en UML l'application de billetterie de concerts avec mon équipe.
+- **Altima/Accenture (2018–2024) :** je relis les spécifications, je signale les points techniques et je propose des solutions `[À CONFIRMER]`.
+- **Lexikos :** les choix techniques sont décrits dans `CLAUDE.md` : architecture, authentification, modèle de données, économie du jeu, paiements. C'est une spécification technique vivante, pas un cahier des charges rédigé en amont.
 
-- Relecture et commentaires sur les specs techniques
-- Propositions d'améliorations techniques
-- Clarification des points techniques pour les rédacteurs
-- Validation de la faisabilité des solutions proposées
+**Recul :** je n'ai jamais rédigé seul un cahier des charges ou une note de cadrage. Je peux en rédiger une pour une évolution de Lexikos, comme preuve.
 
-**Résultats observés :**
+### Preuves
 
-- Specs techniques enrichies par les retours développeur
-- Meilleure adéquation entre specs et réalité technique
-
-**Preuves disponibles :**
-
-- ⚠️ Témoignage possible d'anciens collègues
-- 📋 Note : rôle de contributeur, pas de rédacteur principal
+| Preuve | Type | Accès |
+|---|---|---|
+| `CLAUDE.md` | Documentation | ✅ dépôt Lexikos |
+| Contribution chez Accenture | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -134,33 +139,30 @@ Contribution à l'élaboration des spécifications techniques sans en être le r
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** je conduis seul Lexikos. En équipe, j'applique la méthode du projet.
 
-**Contexte :**
-6 années de pratique quotidienne de la méthodologie Agile/Scrum chez Accenture.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je conduis le projet de façon itérative, par sessions de travail courtes. Chaque session a sa branche datée et se termine par une pull request (61 PR).
+- Je livre en continu : chaque fusion sur `main` part en production.
+- Je sécurise les étapes à risque avant de les ouvrir : bêta plafonnée, paiements testés avec des comptes de test, garde-fou contre les clés de paiement réelles hors production.
+- Je mène le projet sur plus de 18 mois, de février 2025 à aujourd'hui.
 
-- **Rituels Scrum :**
-  - Daily meetings quotidiens
-  - Sprint planning (estimation, découpage des tâches)
-  - Sprint review (démonstration des livrables)
-  - Rétrospectives (amélioration continue)
+### Situation 2 : M2i (2018) et Altima/Accenture (2018–2024)
 
-- **Gestion des sprints :**
-  - Travail en sprints de 2-3 semaines
-  - Respect des engagements du sprint
-  - Adaptation aux changements de priorités
+- **M2i :** je réalise en équipe un projet de billetterie selon Scrum.
+- **Accenture :** je travaille en Scrum : daily, planification de sprint, revue de sprint, rétrospective `[À CONFIRMER]`. Les sprints durent 2 à 3 semaines `[À CONFIRMER]`.
 
-**Résultats observés :**
+**Recul :** je n'ai pas pratiqué le cycle en V ou la cascade. Je sais expliquer quand ils conviennent : un besoin figé, des contraintes réglementaires.
 
-- Livraisons régulières et prévisibles
-- Amélioration continue des processus
+### Preuves
 
-**Preuves disponibles :**
-
-- ⚠️ 6 ans de pratique Scrum attestables par témoignage
-- ✅ Capacité à décrire les rituels en détail
+| Preuve | Type | Accès |
+|---|---|---|
+| Branches datées et 61 PR | Historique GitHub | ✅ dépôt Lexikos |
+| `deploy/PAYMENTS_RUNBOOK.md` | Documentation | ✅ dépôt Lexikos |
+| Pratique Scrum en équipe | Témoignage | ⚠️ |
 
 ---
 
@@ -170,59 +172,55 @@ Contribution à l'élaboration des spécifications techniques sans en être le r
 
 > Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
 
-### Description des activités
+**Place occupée :** en équipe, je suis dans un rôle d'exécution, sans responsabilité de coordination formelle.
 
-**Contexte :**
-Rôle d'exécution au sein des équipes, sans responsabilité de coordination formelle.
+### Situations
 
-**Actions réalisées :**
+- **M2i (2018) :** je coordonne le travail avec mon équipe sur le projet de billetterie.
+- **Altima/Accenture (2018–2024) :** je suis mes tickets dans Jira `[À CONFIRMER]`. Je signale l'avancement et les blocages. J'échange au quotidien avec les autres développeurs.
+- **System-U (2020) :** j'apporte un support technique aux webmasters du site SFCC.
+- **Lexikos :** je coordonne le travail d'agents de code IA. J'encadre leur travail par des conventions écrites (`CLAUDE.md`) et des skills spécialisés, puis je relis tout ce qu'ils produisent.
 
-- **Utilisation de Jira :**
-  - Suivi et mise à jour des tickets
-  - Déplacement des tâches dans le workflow
-  - Documentation des avancées et blocages
+**Recul :** je n'ai pas été Scrum Master ni lead technique. C'est cohérent avec mon poste de développeur.
 
-- **Collaboration d'équipe :**
-  - Communication régulière avec les collègues
-  - Entraide technique
-  - Pas de rôle de Scrum Master ou Team Lead
+### Preuves
 
-**Résultats observés :**
-
-- Bonne intégration dans les équipes
-- Contribution efficace aux objectifs collectifs
-
-**Preuves disponibles :**
-
-- ⚠️ Rôle d'exécution, pas de coordination
-- 📋 Note : cohérent avec un profil développeur (niveau 6)
+| Preuve | Type | Accès |
+|---|---|---|
+| `CLAUDE.md`, `.claude/skills/` | Documentation | ✅ dépôt Lexikos |
+| Travail en équipe chez Accenture | Témoignage | ⚠️ |
 
 ---
 
 ## C31 : Suivi des indicateurs de performance et gestion budgétaire
 
-**Niveau de maîtrise : 1** ⭐
+**Niveau de maîtrise : 2** ⭐⭐
 
-> Jamais réalisé ou participation mineure
+> Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
 
-### Description des activités
+**Place occupée :** sur Lexikos, je définis et je suis seul mes indicateurs. Chez Accenture, le budget ne relevait pas de mon poste.
 
-**Contexte :**
-Pas de responsabilité sur les indicateurs de performance ou la gestion budgétaire.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je trace chaque appel à l'IA avec son nombre de tokens et son coût (modèle `AiUsageEvent`, tarifs dans `aiPricing.js`).
+- J'affiche ces coûts dans un onglet « Coûts IA » du tableau d'analytics.
+- Je suis l'usage avec une télémétrie d'interface anonyme et des statistiques d'activité.
+- Je définis des indicateurs techniques de capacité, avec des seuils qui déclenchent une augmentation des ressources.
+- Je mesure les temps de réponse du serveur, avec l'en-tête `Server-Timing` et une route de mesure.
 
-- Connaissance des indicateurs de vélocité d'équipe
-- Pas de suivi formel des KPIs
-- Pas d'accès aux aspects budgétaires des projets
+**Recul :** je ne suis pas encore le coût d'hébergement ni les frais de paiement dans un même tableau. Il n'existe pas de budget global du projet.
 
-**Résultats observés :**
+### Situation 2 : Altima/Accenture
 
-- Compétence hors du périmètre de mon rôle de développeur
+- Je n'ai pas accès au budget des projets. Je connais les indicateurs de vélocité de l'équipe `[À CONFIRMER]`.
 
-**Preuves disponibles :**
+### Preuves
 
-- 📋 Note : compétence généralement hors scope pour un développeur niveau 6
+| Preuve | Type | Accès |
+|---|---|---|
+| `backend/config/aiPricing.js`, modèle `AiUsageEvent`, `frontend/src/analytics/` | Code | ✅ dépôt Lexikos |
+| `loadtest/CAPACITE.md` : indicateurs de capacité | Rapport | ✅ dépôt Lexikos |
 
 ---
 
@@ -232,25 +230,26 @@ Pas de responsabilité sur les indicateurs de performance ou la gestion budgéta
 
 > Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d'une assistance modérée
 
-### Description des activités
+**Place occupée :** je rédige des rapports techniques sur mon projet. En équipe, je contribue aux revues.
 
-**Contexte :**
-Contribution aux évaluations via les rituels Scrum, sans rédaction de rapports formels.
+### Situation 1 : Lexikos (septembre 2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je rédige `loadtest/MESURES.md`, un rapport de campagne de performance. Il part d'une mesure de référence, puis décrit six corrections, chacune avec son effet mesuré.
+- J'en tire une conclusion chiffrée sur la capacité dans `CAPACITE.md`.
+- Je documente les incidents et leur résolution. Par exemple, l'incident de sauvegarde du 2026-09-09 est décrit dans le runbook.
 
-- Participation aux sprint reviews (démonstration des fonctionnalités)
-- Reporting de l'avancement via Jira
-- Participation aux rétrospectives
-- Pas de rédaction de rapports d'étape formels
+**Recul :** ce sont des rapports techniques, pas des rapports d'avancement projet. Je n'ai pas rédigé de rapport d'étape pour un commanditaire.
 
-**Résultats observés :**
+### Situation 2 : Altima/Accenture
 
-- Visibilité sur l'avancement via les outils Scrum
+- Je présente mes fonctionnalités en revue de sprint et je participe aux rétrospectives `[À CONFIRMER]`.
 
-**Preuves disponibles :**
+### Preuves
 
-- ⚠️ Contribution via les rituels Scrum attestable par témoignage
+| Preuve | Type | Accès |
+|---|---|---|
+| `loadtest/MESURES.md`, `loadtest/CAPACITE.md`, `deploy/MONGODB_BACKUP_RUNBOOK.md` | Rapports | ✅ dépôt Lexikos |
 
 ---
 
@@ -260,43 +259,33 @@ Contribution aux évaluations via les rituels Scrum, sans rédaction de rapports
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** je définis les standards de qualité de mes projets et je les fais respecter automatiquement.
 
-**Contexte :**
-Pratique quotidienne des code reviews pendant 6 ans chez Accenture.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'impose des standards automatiques : ESLint 9 pour le back-end et le front-end, Prettier pour le formatage.
+- J'installe un hook de pré-commit avec Husky et lint-staged. Il corrige le style et lance les tests back-end avant chaque commit.
+- Je relis le diff complet de chaque pull request avant fusion (61 PR).
+- Je mène des revues complètes du code avec des grilles spécialisées : sécurité (commit `0b516df`), accessibilité (commit `3cbd661`), architecture, performance.
+- La revue de sécurité part d'un seul fichier, puis s'étend à tout le projet. Elle trouve 5 familles de failles, que je corrige et que je documente dans le message de commit.
 
-- **En tant que reviewé :**
-  - Soumission systématique du code pour review avant merge
-  - Prise en compte des retours et corrections
-  - Amélioration continue de la qualité du code
+### Situation 2 : Altima/Accenture (2018–2024)
 
-- **En tant que reviewer :**
-  - Relecture du code des collègues
-  - Vérification du respect des standards
-  - Suggestions d'améliorations (performance, lisibilité, maintenabilité)
+- Je soumets mon code en revue avant chaque fusion et je prends en compte les retours.
+- Je relis aussi le code de mes collègues `[À CONFIRMER]`.
 
-- **Outils d'analyse :**
-  - ESLint pour le linting JavaScript
-  - Prettier pour le formatage automatique
-  - Respect des conventions de code de l'équipe
+### Évolution de ma pratique
 
-- **Sur les projets personnels (Wanderline) :**
-  - Hook pre-commit (Husky) qui lance automatiquement lint, formatage et tests backend avant chaque commit
-  - Relecture systématique du diff de chaque pull request avant fusion (76+ PR), avec la CI comme garde-fou
+En équipe, je pratique la revue entre pairs. Seul sur Lexikos, je la remplace par des outils automatiques et par des revues structurées avec des grilles de lecture.
 
-**Résultats observés :**
+### Preuves
 
-- Code de meilleure qualité
-- Partage des bonnes pratiques au sein de l'équipe
-- Détection précoce des bugs
-
-**Preuves disponibles :**
-
-- ✅ Configuration ESLint/Prettier/Husky visible sur les projets GitHub
-- ✅ Historique des pull requests sur le dépôt afterLook/Wanderline
-- ⚠️ Code reviews GitLab : témoignage possible (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| `backend/eslint.config.mjs`, `frontend/eslint.config.js`, `.prettierrc`, `.husky/pre-commit` | Configuration | ✅ dépôt Lexikos |
+| Commits `0b516df`, `3cbd661` | Historique Git | ✅ dépôt Lexikos |
+| Revues chez Accenture | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -306,32 +295,27 @@ Pratique quotidienne des code reviews pendant 6 ans chez Accenture.
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** je définis et j'applique seul la stratégie de test.
 
-**Contexte :**
-Formation Octo Academy « Pratiques de dev de qualité » (TDD, 2020), puis pratique systématique du TDD et des tests automatisés sur les projets personnels récents.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'écris 89 fichiers de tests Jest pour le back-end, dont des tests d'intégration avec Supertest et une base MongoDB en mémoire.
+- Je lance ces tests à chaque commit.
+- Je réalise des tests de charge avec k6 pour valider la performance sous forte affluence.
 
-- **Wanderline — développement piloté par les tests (TDD) :**
-  - Tests unitaires et d'intégration backend : Jest + Supertest, base MongoDB en mémoire (~50 fichiers de tests)
-  - Tests unitaires frontend : Vitest
-  - Tests end-to-end : 18 scénarios Playwright couvrant les parcours utilisateur complets (login/logout, édition d'articles, upload de photos, partage, sauvegarde/restauration, administration…)
-  - Mesure de la couverture de code dans la CI
-- **Lexikos :** tests Jest des services backend
-- Exécution automatique : hook pre-commit (Husky) + pipeline GitHub Actions où les trois familles de tests sont bloquantes avant déploiement
-- Prise en compte des contraintes techniques : caches CI pour maîtriser la durée des pipelines, tests isolés et reproductibles
+**Difficulté et recul :** Lexikos n'a ni tests front-end ni tests de bout en bout. Les tests ne tournent pas dans la CI et la couverture de code n'est pas mesurée. Pour compléter ma stratégie, j'ajouterai des tests front avec Vitest, quelques parcours de bout en bout avec Playwright, puis je rendrai le tout bloquant dans la CI.
 
-**Résultats observés :**
+### Situation 2 : formation Octo Academy (05/2020)
 
-- Fiabilité des livraisons : aucune mise en production sans tests verts
-- Refactorisations sereines grâce au filet de sécurité
+- Je suis la formation « Pratiques de dev de qualité », centrée sur le TDD : écrire d'abord le test qui échoue, puis le code qui le fait passer.
 
-**Preuves disponibles :**
+### Preuves
 
-- ✅ Suites de tests (unitaires, intégration, e2e) visibles dans les dépôts
-- ✅ Runs CI avec tests dans l'historique GitHub Actions
-- ✅ Certification Octo Academy « Pratiques de dev de qualité » (TDD)
+| Preuve | Type | Accès |
+|---|---|---|
+| `backend/__tests__/`, `loadtest/` | Tests | ✅ dépôt Lexikos |
+| Certificat Octo Academy (05/2020) | Certificat | ✅ |
 
 ---
 
@@ -341,39 +325,68 @@ Formation Octo Academy « Pratiques de dev de qualité » (TDD, 2020), puis prat
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** je rédige et je maintiens seul toute la documentation de mes projets.
 
-**Contexte :**
-Documentation systématique des projets personnels : mise en route, méthodologie, exploitation et dépannage.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je rédige un README en anglais : présentation et commandes.
+- Je tiens à jour un `CLAUDE.md` très détaillé : architecture, authentification, modèle de domaine, paiements, e-mails, banc de charge, conventions. Il sert à tout contributeur, humain ou agent IA.
+- J'écris 4 runbooks d'exploitation : paiements, synthèse vocale, Redis, sauvegardes MongoDB.
+- J'écris des guides de configuration et de diagnostic de MongoDB (`MONGODB_LOCAL_SETUP.md`, `MONGODB_DIAGNOSTIC_GUIDE.md`).
+- Je documente le banc de charge et ses résultats (`loadtest/README.md`, `MESURES.md`, `CAPACITE.md`).
 
-- **README structurés** sur chaque projet : concept, stack, méthodologie (TDD/SOLID sur Wanderline), commandes de développement/production/administration, configuration de l'environnement
-- **Guides d'exploitation dédiés** : guides de configuration et de diagnostic MongoDB sur Lexikos (MONGODB_LOCAL_SETUP.md, MONGODB_DIAGNOSTIC_GUIDE.md), scripts de diagnostic commentés
-- **Documentation des conventions pour les assistants IA** (CLAUDE.md) : standards de code et méthodologie du projet, exploitables par tout contributeur — une forme moderne de partage des connaissances
-- Suivi des évolutions dans un TODO.md versionné
-- Commentaires dans le code réservés aux contraintes non évidentes
+**Résultat :** tout ce qu'il faut pour installer, lancer, tester, déployer et dépanner est dans le dépôt.
 
-**Résultats observés :**
+**Recul :** le README n'est pas à jour avec la richesse actuelle du projet. Il ne décrit ni la connexion par code OTP, ni les paiements, ni la PWA. Une partie de la documentation est en français, une autre en anglais.
 
-- Tout le nécessaire pour installer, lancer, tester, déployer et dépanner chaque projet est dans le dépôt
-- Reprise du projet possible par un tiers sans transmission orale
+### Situation 2 : Altima/Accenture
 
-**Preuves disponibles :**
+- **Accenture :** j'utilise une plateforme de documentation d'équipe comme Confluence `[À CONFIRMER]`.
 
-- ✅ README, guides et documentation de méthodologie visibles sur les dépôts GitHub
-- 📋 Marge de progression : pratique d'une plateforme collaborative d'équipe (Confluence, wiki) — expérience Jira/Confluence côté Accenture attestable par témoignage
+### Preuves
+
+| Preuve | Type | Accès |
+|---|---|---|
+| `README.md`, `CLAUDE.md`, `deploy/*.md`, `loadtest/*.md`, guides MongoDB | Documentation | ✅ dépôt Lexikos |
 
 ---
 
-## 📋 Actions à mener pour renforcer le dossier
+## Veille technologique multilingue (attendu du référentiel)
 
-| Compétence              | Action                                                        | Priorité | Statut     |
-| ----------------------- | ------------------------------------------------------------- | -------- | ---------- |
-| **C27-C28** (Specs)     | Rédiger une spec technique/note de cadrage pour une feature   | Moyenne  | ⏳ À faire |
-| **C34** (Tests)         | ~~Implémenter des tests automatisés~~                          | -        | ✅ Fait    |
-| **C35** (Documentation) | ~~Enrichir les README + documentation~~                        | -        | ✅ Fait    |
+La fiche France Compétences du titre mentionne en bloc 4 une veille technologique en lien avec le projet et la maîtrise de l'anglais.
 
-> 💡 **Point fort :** Vos 6 ans de pratique Scrum et de code reviews quotidiennes sont des atouts majeurs. Même sans preuve matérielle, vous pouvez en parler en détail lors de l'entretien avec le jury.
+**Ce que je fais :**
+- J'automatise ma veille avec n8n, que je déploie et j'administre sur un VPS.
+- Je m'appuie sur la documentation officielle des outils, en anglais. Sur Lexikos, une règle impose de consulter cette documentation avant d'utiliser une bibliothèque. Un agent dédié la récupère.
+- Je me forme avec des cours en anglais : React, Node.js, Docker et Kubernetes, sur Udemy.
+- J'écris le README et les messages de commit de Lexikos en anglais.
+- Lexikos lui-même est un outil d'apprentissage du vocabulaire anglais.
 
-> 📝 **Note sur C30-C31 (Coordination/KPIs) :** Ces compétences sont généralement attendues pour des profils Lead/Manager. Pour un développeur niveau 6, un rôle d'exécution est tout à fait cohérent et acceptable.
+**À produire :** un rapport de veille court, qui cite quelques sources anglophones et ce que j'en ai tiré pour Lexikos.
+
+---
+
+## 📋 Actions à mener
+
+| Action | Compétence | Priorité |
+|---|---|---|
+| Rédiger une note de cadrage pour une évolution de Lexikos | C27, C28 | Haute |
+| Rédiger un rapport de veille multilingue | Veille | Haute |
+| Ajouter des tests front et un test de bout en bout à Lexikos, puis les lancer en CI | C34 | Moyenne |
+| Mettre à jour le README de Lexikos | C35 | Moyenne |
+| Réunir coûts d'hébergement, d'IA et de paiement dans un même suivi | C31 | Basse |
+| Obtenir des attestations sur la pratique Scrum et les revues de code chez Accenture | C29, C33 | Haute |
+
+## ❓ Éléments à confirmer
+
+| Élément | Question |
+|---|---|
+| Retours utilisateurs | Quelles fonctionnalités de Lexikos sont nées de retours de bêta-testeurs ? |
+| Réunions client | Participais-tu aux réunions de recueil des besoins avec les clients chez Accenture ? |
+| Scrum chez Accenture | Le CV ne mentionne Scrum que pour M2i. Quelles cérémonies pratiquais-tu chez Accenture, et quelle était la durée des sprints ? |
+| Jira, Confluence | Quels outils de suivi et de documentation utilisais-tu chez Accenture ? |
+| Estimation | Participais-tu à l'estimation des tâches, par exemple en story points ? |
+| Spécifications | Relisais-tu et commentais-tu les spécifications techniques ? |
+| Reviewer | Relisais-tu le code de tes collègues, ou seulement le tien était-il relu ? |
+| Vélocité | Suivais-tu des indicateurs d'équipe comme la vélocité ? |

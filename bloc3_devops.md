@@ -1,42 +1,42 @@
 # BLOC 3 : Élaborer, intégrer et optimiser les architectures de systèmes d'information et garantir l'industrialisation du développement
 
+> Sources recoupées le 2026-09-30 : CV en ligne (https://cv.gregory-day.fr/api/resume.json) et dépôts `neruuren/lexikos` et `neruuren/my_nodejs_webcv`.
+> Les mentions `[À CONFIRMER]` signalent une affirmation que ni le CV ni les dépôts ne confirment. Elles sont listées en fin de fichier.
+
 ## Synthèse du bloc
 
 **Connaissances, compétences et aptitudes mobilisées :**
 
-- Maîtrise de Git et des workflows collaboratifs (GitLab, GitHub, branches/PR)
-- Conception de pipelines CI/CD complets avec GitHub Actions (tests bloquants puis déploiement)
-- Conteneurisation Docker (Dockerfile, docker-compose) en production
-- Configuration et administration de VPS (Scaleway, OVH)
-- Compréhension des architectures monolithiques et headless
-- Automatisation de la veille avec n8n auto-hébergé
+- Cloud : PaaS (Salesforce Commerce Cloud), VPS (OVH), stockage objet (Backblaze B2), API d'IA en SaaS (Mistral, OpenAI)
+- Architectures : monolithe modulaire, headless API-first, PWA hors ligne, cluster de processus
+- Dimensionnement : tests de charge, estimation de capacité, indicateurs de montée en charge
+- Git et GitHub : branches, pull requests, hooks de pré-commit
+- Conteneurs : Docker, Docker Compose, Podman
+- CI/CD : GitHub Actions, déploiement par SSH, gestion des secrets
+- Automatisation : cron, scripts bash, n8n auto-hébergé
 
 **Comment avez-vous acquis ces compétences ?**
 
-- 6 années d'expérience professionnelle chez Altima/Accenture (2018-2024) - GitLab, SFCC Cloud
-- Projets personnels et freelance (2024-2026) - GitHub, GitHub Actions, Docker, VPS, déploiement automatisé
+| Période | Source |
+|---|---|
+| 2005–2007 | BTS au C.U.E.E.P : réseaux et systèmes |
+| 2018–2024 | Altima/Accenture : environ 5 ans sur Salesforce Commerce Cloud, POC headless API-first, travail en équipe sous Git |
+| 2024–2025 | Autoformation : cours Udemy « Docker & Kubernetes », MyWebCV conteneurisé et déployé automatiquement |
+| 2025–aujourd'hui | Lexikos en production sur VPS, n8n auto-hébergé |
 
 ---
 
 ## ⚠️ Note sur les preuves et la confidentialité
 
-**Contrainte professionnelle :** Durant mes 6 années chez Altima/Accenture, j'ai travaillé exclusivement sur des projets clients soumis à des clauses de confidentialité strictes (NDA). À chaque fin de mission, j'étais contractuellement tenu de supprimer tout document, code source ou capture d'écran relatif aux projets.
+Chez Altima/Accenture, je travaille sous clause de confidentialité. L'historique Git des projets clients n'est pas accessible. Je démontre les mêmes compétences sur mes dépôts publics.
 
-**Ce que je peux fournir comme preuves :**
 | Type de preuve | Disponibilité |
-|----------------|---------------|
-| **Dépôts GitHub personnels** | ✅ Historique Git, workflows CI/CD |
-| **Serveurs en production** | ✅ VPS configurés (Scaleway, OVH) |
-| **Témoignages d'anciens collègues** | ⚠️ Attestations générales possibles |
-| **Historique GitLab Accenture** | ❌ Non disponible (NDA) |
-
-**Projets personnels démontrables :**
-
-- 🌐 Lexikos : https://lexikos.eu (hébergé sur VPS, MongoDB Dockerisé, CI/CD GitHub Actions)
-- 🌐 CV en ligne : https://cv.gregory-day.fr/ (hébergé sur VPS, déploiement Docker automatisé)
-- 🌐 Wanderline : https://wanderline.gregory-day.fr (CI complète : tests backend + frontend + e2e Playwright bloquants, puis déploiement rsync + docker compose sur VPS)
-- ⚙️ n8n auto-hébergé sur VPS (automatisation de la veille technologique)
-- 📁 Dépôts GitHub avec historique, pull requests et workflows
+|---|---|
+| Dépôt Lexikos : 1 088 commits, 61 PR, workflow de déploiement, configurations serveur, rapports de charge | ✅ |
+| Dépôt MyWebCV : Dockerfile, Compose, workflow de déploiement | ✅ |
+| Serveurs en production (OVH) | ✅ |
+| Certification SFCC (plateforme cloud) | ✅ |
+| Historique Git d'Accenture | ❌ NDA |
 
 ---
 
@@ -46,31 +46,30 @@
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** sur mes projets, je choisis et j'intègre seul les services cloud. Chez Accenture, je développe sur une plateforme cloud choisie par le client.
 
-**Contexte :**
-Utilisation de solutions cloud en contexte professionnel (SFCC) et personnel (VPS).
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'héberge l'application sur un VPS OVH. Je garde ainsi la maîtrise du système et un coût fixe.
+- J'intègre des services cloud spécialisés plutôt que de les héberger : Mistral AI et OpenAI pour l'IA, Stripe et PayPal pour les paiements.
+- J'externalise les sauvegardes vers un stockage objet, Backblaze B2, pour qu'elles survivent à une panne du serveur.
+- J'héberge moi-même la synthèse vocale Piper, avec un processus par langue. Cela évite un coût à l'usage sur une fonction très sollicitée.
 
-- **Salesforce Commerce Cloud (6 ans) :**
-  - Travail quotidien sur une plateforme e-commerce cloud (PaaS)
-  - Compréhension des avantages : scalabilité, maintenance gérée, haute disponibilité
+**Choix et arbitrages :** j'externalise quand le service demande une expertise rare, comme l'IA ou le paiement. J'héberge quand le coût à l'usage deviendrait trop élevé, comme pour la synthèse vocale.
 
-- **VPS Cloud (projets personnels) :**
-  - Évaluation des besoins : coût, performance, contrôle
-  - Choix de VPS (Scaleway, OVH) plutôt que PaaS pour les projets personnels
-  - Configuration complète des serveurs
+### Situation 2 : Altima/Accenture (2018–2024)
 
-**Résultats observés :**
+- Je développe pendant environ 5 ans sur Salesforce Commerce Cloud, une plateforme e-commerce en PaaS : l'hébergement, la montée en charge et la maintenance sont gérés par l'éditeur.
+- J'y développe des jobs automatisés pour les traitements back-end (Ba&Sh).
+- J'obtiens la certification SFCC B2C Commerce Developer en janvier 2020.
 
-- Solutions cloud adaptées aux besoins de chaque projet
-- Maîtrise des coûts sur les projets personnels
+### Preuves
 
-**Preuves disponibles :**
-
-- ✅ VPS en production (Lexikos sur OVH, WebCV sur Scaleway)
-- ✅ Certification SFCC B2C Commerce Developer (plateforme cloud)
+| Preuve | Type | Accès |
+|---|---|---|
+| `backup-mongodb.sh` (copie B2), `deploy/PIPER_TTS_RUNBOOK.md`, `deploy/PAYMENTS_RUNBOOK.md` | Code et documentation | ✅ dépôt Lexikos |
+| Certification SFCC B2C Commerce Developer | Certificat | ✅ |
 
 ---
 
@@ -80,36 +79,31 @@ Utilisation de solutions cloud en contexte professionnel (SFCC) et personnel (VP
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** je conçois seul l'architecture de mes projets. Chez Accenture, je participe à un POC d'architecture.
 
-**Contexte :**
-Compréhension des différentes architectures et choix adaptés aux projets.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je choisis un monolithe modulaire : une API Express découpée en routes, contrôleurs et services, et un front React séparé.
+- Je sépare le serveur WebSocket de conversation dans un processus à part (`lexikos-chat`). Ses contraintes de connexion sont différentes de celles de l'API.
+- Je fais tourner l'API en cluster de 2 processus avec PM2. Je partage l'état entre eux avec Redis : limites de débit et invalidation du cache.
+- Je rends le front utilisable hors ligne (PWA) : les réponses sont mises en file d'attente puis synchronisées.
 
-- **Architectures monolithiques :**
-  - Développement sur SFCC (architecture monolithique e-commerce)
-  - Lexikos et WebCV : applications Node.js monolithiques
+**Choix et arbitrages :** je n'adopte pas les microservices. Un seul développeur ne peut pas exploiter plusieurs services indépendants de façon fiable. Je n'isole que ce qui a des besoins d'exploitation différents : WebSocket et synthèse vocale.
 
-- **Architecture headless / API-first :**
-  - POC SFCC headless chez Accenture (9 mois)
-  - Backend Lexikos conçu pour être appelé par une application mobile (API REST)
-  - Séparation front/back permettant l'évolutivité
+### Situation 2 : Altima/Accenture, POC headless (2020–2021)
 
-- **Compréhension théorique :**
-  - Microservices : avantages (scalabilité, indépendance) et complexité
-  - Serverless : cas d'usage (fonctions ponctuelles, coûts variables)
-  - N-tiers : séparation des responsabilités
+- Pendant environ 9 mois, je développe un POC e-commerce SFCC en architecture headless, API-first.
+- Le front Vue.js et Nuxt.js est séparé du back-end et communique en GraphQL. Chaque partie peut évoluer séparément.
+- Je connais aussi les architectures serverless et n-tiers, sans les avoir mises en production.
 
-**Résultats observés :**
+### Preuves
 
-- Capacité à choisir l'architecture adaptée au contexte
-- Expérience concrète sur monolithique et headless
-
-**Preuves disponibles :**
-
-- ✅ API Lexikos prête pour une application mobile
-- ⚠️ POC headless SFCC : témoignage possible (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| `deploy/ecosystem.config.js` (cluster et processus chat), `frontend/src/offline/` | Code | ✅ dépôt Lexikos |
+| `CLAUDE.md` : description de l'architecture | Documentation | ✅ dépôt Lexikos |
+| POC headless | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -119,33 +113,32 @@ Compréhension des différentes architectures et choix adaptés aux projets.
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** j'administre seul la plateforme et je décide de son dimensionnement.
 
-**Contexte :**
-Gestion autonome des ressources cloud pour les projets personnels.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'administre le VPS OVH : Nginx, certificats, PM2, Redis, MongoDB, processus de synthèse vocale.
+- Je dimensionne la plateforme à partir de mesures. Les tests de charge me donnent la capacité réelle du serveur (4 vCPU, 7,6 Go) : environ 1 600 joueurs actifs.
+- Je rédige un tableau d'indicateurs qui déclenchent une augmentation des ressources (`loadtest/CAPACITE.md`).
+- J'optimise avant d'acheter plus de ressources : cache, projections, suppression d'index redondants, limite de mémoire par processus.
+- Je configure Redis pour une empreinte mémoire bornée : `maxmemory`, éviction `allkeys-lru`, persistance désactivée.
+- Je suis le coût des appels d'IA par token dans le tableau d'administration.
+- Je rédige 4 runbooks d'exploitation, pour pouvoir intervenir vite en cas d'incident.
 
-- Configuration complète de VPS :
-  - Installation de l'OS (Linux)
-  - Configuration réseau, pare-feu, SSH
-  - Installation des dépendances (Node.js, MongoDB, Nginx)
-- Optimisation des ressources :
-  - Choix de la taille de VPS adaptée aux besoins
-  - Monitoring des performances
-- Gestion des coûts :
-  - Comparaison des offres (Scaleway vs OVH)
-  - Optimisation du rapport performance/prix
+**Recul :** je n'ai pas encore de supervision externe avec alertes, comme Prometheus ou Sentry. Les journaux sont stockés en base.
 
-**Résultats observés :**
+### Situation 2 : MyWebCV (2024–2025)
 
-- Serveurs stables et performants
-- Coûts maîtrisés
+- J'administre un second serveur chez OVH, avec l'application en conteneurs Docker.
 
-**Preuves disponibles :**
+### Preuves
 
-- ✅ VPS en production depuis plusieurs mois
-- ✅ Configuration documentable
+| Preuve | Type | Accès |
+|---|---|---|
+| `loadtest/CAPACITE.md`, `loadtest/MESURES.md` | Rapports | ✅ dépôt Lexikos |
+| `deploy/REDIS_RUNBOOK.md` et 3 autres runbooks | Documentation | ✅ dépôt Lexikos |
+| `backend/config/aiPricing.js`, modèle `AiUsageEvent` | Code | ✅ dépôt Lexikos |
 
 ---
 
@@ -155,33 +148,28 @@ Gestion autonome des ressources cloud pour les projets personnels.
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** je définis et j'applique seul la stratégie de versionnement de mes projets.
 
-**Contexte :**
-Utilisation quotidienne de Git depuis plus de 6 ans.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je versionne tout le projet sous Git : 1 088 commits entre février 2025 et septembre 2026.
+- Je travaille par branches de session, nommées par date (`AAAA-MM-JJ-SESSION-NN`), soit 102 branches.
+- J'écris des messages de commit qui expliquent le pourquoi. Par exemple, le commit `0b516df` décrit chaque faille corrigée et sa cause.
+- J'exclus du dépôt les secrets et les sauvegardes. Quand une sauvegarde y entre par erreur, je la retire (commit du 2026-09-21).
 
-- **Chez Accenture (GitLab) :**
-  - Commits réguliers et messages explicites
-  - Historique propre et traçable
-  - Travail en équipe sur les mêmes dépôts
+**Recul :** je n'utilise pas de tags de version. Des tags à chaque mise en production faciliteraient un retour arrière.
 
-- **Projets personnels (GitHub) :**
-  - Gestion de l'historique des modifications
-  - Utilisation des tags pour les versions
-  - Commits atomiques
-  - Workflow par branches de fonctionnalité même en solo (Wanderline : 76+ pull requests mergées)
+### Situation 2 : Altima/Accenture (2018–2024)
 
-**Résultats observés :**
+- J'utilise Git au quotidien en équipe, sur des dépôts partagés, sous GitLab `[À CONFIRMER]`.
 
-- Historique clair et exploitable
-- Traçabilité complète des modifications
+### Preuves
 
-**Preuves disponibles :**
-
-- ✅ Historique Git visible sur les dépôts GitHub
-- ⚠️ GitLab Accenture : témoignage possible (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| Historique et branches du dépôt Lexikos | Historique Git | ✅ |
+| Pratique en équipe chez Accenture | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -191,34 +179,27 @@ Utilisation quotidienne de Git depuis plus de 6 ans.
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** sur mes projets, je définis la procédure de fusion. En équipe, je l'applique.
 
-**Contexte :**
-Expérience des workflows collaboratifs en entreprise, simplifiés sur les projets personnels (développeur unique).
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je fusionne mon travail par pull request sur GitHub : 61 PR depuis août 2025.
+- Chaque PR regroupe une session de travail. Je relis le diff complet avant fusion.
+- Le hook Husky empêche tout commit qui ne passe pas le lint et les tests back-end.
 
-- **Chez Accenture (GitLab) :**
-  - Utilisation systématique des Merge Requests
-  - Revue de code avant fusion
-  - Résolution de conflits lors des merges
-  - Branches par feature/bugfix
+**Difficulté et recul :** la CI de Lexikos ne lance pas de vérification sur les PR. Le contrôle repose sur le hook local. Je veux faire lancer le lint et les tests par GitHub Actions sur chaque PR, et bloquer la fusion en cas d'échec.
 
-- **Projets personnels (GitHub) :**
-  - Workflow par branches de fonctionnalité et pull requests, y compris en développeur unique (Wanderline : 76+ PR mergées)
-  - GitHub Actions déclenché sur les PR : les tests (backend, frontend, e2e) doivent passer avant la fusion
-  - Résolution de conflits lors des rebases/merges de branches
+### Situation 2 : Altima/Accenture (2018–2024)
 
-**Résultats observés :**
+- je soumets mon code par merge request et je résous les conflits de fusion avec l'équipe `[À CONFIRMER]`.
 
-- Code intégré de manière contrôlée, en entreprise comme sur les projets personnels
-- Aucune fusion possible avec des tests en échec
+### Preuves
 
-**Preuves disponibles :**
-
-- ✅ Historique des pull requests et des runs CI visibles sur le dépôt afterLook/Wanderline
-- ✅ Workflows GitHub Actions visibles sur les dépôts
-- ⚠️ Merge Requests GitLab : témoignage possible (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| 61 PR fusionnées | Historique GitHub | ✅ dépôt Lexikos |
+| `.husky/pre-commit` | Code | ✅ dépôt Lexikos |
 
 ---
 
@@ -228,28 +209,30 @@ Expérience des workflows collaboratifs en entreprise, simplifiés sur les proje
 
 > Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** je conçois et j'exploite seul les conteneurs de mes projets.
 
-**Contexte :**
-Conteneurisation de mes applications personnelles, utilisées quotidiennement en production.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je lance MongoDB et Redis en conteneurs pour le développement. Le même script fonctionne avec Podman ou Docker (`scripts/podman-wrapper.sh`).
+- En production, MongoDB tourne en conteneur. Les sauvegardes s'exécutent dans le conteneur avec `docker exec`.
+- Je décris le service MongoDB dans un `docker-compose.yml`, avec un contrôle de santé et un réseau dédié.
 
-- **Wanderline et WebCV :** écriture des Dockerfile, docker-entrypoint.sh et docker-compose.yml ; les applications tournent en production dans des conteneurs (backend Node.js + MongoDB)
-- **Lexikos :** MongoDB conteneurisé en production (docker-compose), sauvegardes exécutées dans le conteneur
-- Reconstruction et redémarrage automatisés des conteneurs à chaque déploiement (`docker compose up -d --build` piloté par la CI)
-- Gestion des volumes (persistance MongoDB, uploads), des variables d'environnement et du nettoyage des images obsolètes (`docker image prune` en fin de pipeline)
-- n8n déployé en auto-hébergé sur VPS
+**Choix et arbitrages :** l'API Lexikos n'est pas conteneurisée. Elle tourne sous PM2 en cluster, que j'administre directement. Le `docker-compose.yml` ne sert pas au déploiement réel. C'est une incohérence à résoudre.
 
-**Résultats observés :**
+### Situation 2 : MyWebCV (2024–2025)
 
-- Environnements reproductibles entre développement et production
-- Déploiements standardisés sur tous les projets
+- J'écris le `Dockerfile`, le `docker-entrypoint.sh` et le `docker-compose.yml`. L'application tourne en production dans des conteneurs : back-end Node.js et MongoDB.
+- La CI reconstruit et redémarre les conteneurs à chaque déploiement (`docker compose up -d --build`), puis supprime les images obsolètes.
+- Je gère les volumes pour la persistance des données et des fichiers envoyés.
+- Je déploie n8n en auto-hébergé sur un VPS pour automatiser ma veille technologique.
 
-**Preuves disponibles :**
+### Preuves
 
-- ✅ Dockerfile et docker-compose.yml visibles dans les dépôts (afterLook/Wanderline, my_nodejs_webcv, Lexikos)
-- ✅ Applications conteneurisées accessibles en production
+| Preuve | Type | Accès |
+|---|---|---|
+| `Dockerfile`, `docker-entrypoint.sh`, `docker-compose.yml`, `.github/workflows/deploy.yml` | Code | ✅ dépôt MyWebCV |
+| `scripts/podman-wrapper.sh`, `docker-compose.yml` | Code | ✅ dépôt Lexikos |
 
 ---
 
@@ -259,75 +242,77 @@ Conteneurisation de mes applications personnelles, utilisées quotidiennement en
 
 > Jamais réalisé ou participation mineure
 
-### Description des activités
+**Place occupée :** connaissance théorique uniquement.
 
-**Contexte :**
-Pas d'expérience avec les orchestrateurs de conteneurs.
+### Ce que je sais et ce que j'ai fait
 
-**Actions réalisées :**
+- Je suis le cours Udemy « Docker & Kubernetes: The Practical Guide ». J'y apprends les pods, les deployments, les services et les volumes.
+- Je n'ai jamais exploité Kubernetes en production.
+- Sur Lexikos, je réponds aux mêmes besoins avec d'autres outils : PM2 en cluster redémarre les processus, Redis partage l'état. Je dimensionne à partir de mesures de charge.
 
-- Connaissance théorique de Kubernetes :
-  - Concepts de pods, services, deployments
-  - Cas d'usage (applications à forte charge, microservices)
-- Pas de mise en pratique
+**Choix et arbitrages :** à l'échelle d'un seul serveur et d'environ 1 600 joueurs actifs, Kubernetes ajouterait une complexité sans bénéfice. Je l'envisagerais pour répartir la charge sur plusieurs serveurs.
 
-**Résultats observés :**
+### Preuves
 
-- Compréhension conceptuelle uniquement
-
-**Preuves disponibles :**
-
-- ⚠️ Compétence à acquérir
-- 📋 Note : Pour un niveau 6 (Bac+3/4), une connaissance théorique peut suffire
+| Preuve | Type | Accès |
+|---|---|---|
+| Cours Udemy Docker & Kubernetes | Formation | ⚠️ attestation à retrouver |
+| `loadtest/CAPACITE.md` : arbitrage de capacité | Rapport | ✅ dépôt Lexikos |
 
 ---
 
 ## C25 : Automatisation du déploiement (DevOps, CI/CD)
 
-**Niveau de maîtrise : 4** ⭐⭐⭐⭐
+**Niveau de maîtrise : 3** ⭐⭐⭐
 
-> Réalisé avec aisance, en autonomie totale
+> Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
 
-### Description des activités
+**Place occupée :** je conçois et je maintiens seul les pipelines de mes projets.
 
-**Contexte :**
-Conception en autonomie totale de pipelines CI/CD complets pour les trois projets personnels en production.
+**Justification du niveau :** le déploiement est entièrement automatisé et sécurisé, mais le pipeline ne lance pas encore les tests. Le niveau 4 sera justifié quand les tests bloqueront la mise en production.
 
-**Actions réalisées :**
+### Situation 1 : Lexikos (2025–2026)
 
-- **Pipeline complet sur Wanderline (GitHub Actions) :**
-  - 4 jobs : tests backend (Jest + couverture), tests frontend (Vitest + couverture), tests e2e (Playwright avec build du front), puis déploiement conditionné à la réussite des trois jobs de test
-  - Optimisations : cache npm, cache des binaires mongodb-memory-server, installation ciblée du navigateur Chromium pour Playwright
-  - Déploiement : connexion SSH sécurisée (ssh-agent + secrets GitHub), synchronisation rsync excluant les `.env` de production, reconstruction des conteneurs (`docker compose up -d --build`), nettoyage des images
-  - Déclenchement sur push, sur pull request (tests seuls) et manuel (workflow_dispatch)
+**Ce que j'ai fait :**
+- J'écris un workflow GitHub Actions déclenché par chaque push sur `main` (`.github/workflows/deploy.yml`).
+- Le workflow se connecte au VPS par SSH avec une clé stockée dans les secrets GitHub.
+- Il met à jour le code, installe les dépendances, construit le front sur le serveur, puis recharge PM2 sans interruption de service (`pm2 reload`) et redémarre Nginx.
+- Les secrets de production restent sur le serveur (`backend/.env`) et ne transitent jamais par le dépôt.
 
-- **Lexikos et WebCV :** workflows de déploiement automatisé équivalents, adaptés à chaque projet
+**Difficulté et recul :** ce pipeline ne lance ni lint ni tests. Un code cassé peut donc partir en production si le hook local est contourné. C'est la prochaine amélioration.
 
-- **Scripts d'automatisation :**
-  - Scripts bash pour les tâches répétitives (sauvegardes cron, migrations, promotion admin)
-  - Automatisation de la veille technologique avec n8n auto-hébergé
+- J'automatise aussi les tâches récurrentes par scripts : sauvegardes cron, promotion d'un administrateur (`scripts/`).
 
-**Résultats observés :**
+### Situation 2 : MyWebCV (2024–2025)
 
-- Déploiement en un push, impossible si les tests échouent
-- Réduction des erreurs humaines, secrets jamais exposés dans le dépôt
-- Gain de temps significatif
+- J'écris un workflow qui se connecte au VPS par SSH, synchronise les fichiers avec rsync, reconstruit les conteneurs (`docker compose up -d --build`) et supprime les images obsolètes.
 
-**Preuves disponibles :**
+### Évolution de ma pratique
 
-- ✅ Fichiers .github/workflows/ visibles sur les dépôts
-- ✅ Historique des runs (tests + déploiements) sur GitHub Actions
+Sur MyWebCV, j'automatise le déploiement de conteneurs. Sur Lexikos, j'ajoute un rechargement sans interruption de service et un contrôle qualité local avant chaque commit. L'étape suivante est de rendre les tests bloquants dans la CI.
+
+### Preuves
+
+| Preuve | Type | Accès |
+|---|---|---|
+| `.github/workflows/deploy.yml` | Code | ✅ dépôts Lexikos et MyWebCV |
+| Historique des exécutions GitHub Actions | Historique | ✅ |
 
 ---
 
-## 📋 Actions à mener pour renforcer le dossier
+## 📋 Actions à mener
 
-| Compétence           | Action                                                    | Priorité | Statut     |
-| -------------------- | --------------------------------------------------------- | -------- | ---------- |
-| **C24** (Kubernetes) | Tutoriel/formation basique (optionnel pour niveau 6)       | Basse    | ⏳ Optionnel |
-| **C23** (Docker)     | ~~Créer un Dockerfile pour Lexikos ou WebCV~~              | -        | ✅ Fait    |
-| **C21-C22** (Git)    | ~~Reprendre l'habitude des branches sur un projet perso~~  | -        | ✅ Fait (76+ PR sur Wanderline) |
+| Action | Compétence | Priorité |
+|---|---|---|
+| Ajouter lint et tests Jest au workflow Lexikos, bloquants avant le déploiement | C22, C25 | Haute |
+| Lancer ces vérifications sur chaque pull request Lexikos | C22 | Haute |
+| Conteneuriser l'API Lexikos ou retirer le `docker-compose.yml` inutilisé | C23 | Moyenne |
+| Poser un tag Git à chaque mise en production | C21 | Basse |
+| Ajouter une supervision avec alertes | C20 | Basse |
 
-> 💡 **Point fort du bloc :** le pipeline CI/CD de Wanderline (tests unitaires + intégration + e2e bloquants, puis déploiement Docker automatisé) est une démonstration complète de la chaîne DevOps attendue.
+## ❓ Éléments à confirmer
 
-> 📝 **Note sur C24 (Kubernetes) :** Pour un titre niveau 6, l'orchestration de conteneurs n'est généralement pas une compétence critique. Une connaissance théorique suffit souvent. Vous pouvez par ailleurs expliquer au jury pourquoi docker-compose est le bon choix à l'échelle de vos projets (arbitrage coût/complexité).
+| Élément | Question |
+|---|---|
+| GitLab chez Accenture | La plateforme Git d'Accenture était-elle GitLab ? |
+| Merge requests et conflits | Peux-tu décrire un conflit de fusion que tu as résolu en équipe ? |

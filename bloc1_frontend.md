@@ -1,44 +1,44 @@
 # BLOC 1 : Concevoir et réaliser des interfaces utilisateurs adaptatives et des expériences interactives front-end
 
+> Sources recoupées le 2026-09-30 : CV en ligne (https://cv.gregory-day.fr/api/resume.json) et dépôt Lexikos (`neruuren/lexikos`).
+> Les mentions `[À CONFIRMER]` signalent une affirmation que ni le CV ni les dépôts ne confirment. Elles sont listées en fin de fichier.
+
 ## Synthèse du bloc
 
 **Connaissances, compétences et aptitudes mobilisées :**
 
-- Maîtrise des langages HTML5, CSS3/Sass et JavaScript/TypeScript
-- Connaissance approfondie des frameworks front-end (Vue.js, React, Nuxt.js)
-- Compréhension des principes UX/UI et du responsive design
-- Intégration fidèle de maquettes graphiques
-- Optimisation des performances et du SEO
+- HTML5 sémantique, accessibilité (attributs ARIA, `<dialog>` natif, textes pour lecteurs d'écran), SEO (Open Graph, sitemap, prérendu, données structurées)
+- CSS3, Sass, Tailwind CSS, responsive mobile-first, mode sombre
+- JavaScript ES6+ depuis 2011, TypeScript sur le POC headless (environ 9 mois)
+- Communication asynchrone : AJAX sous jQuery, axios avec intercepteurs, WebSocket (Socket.IO)
+- Frameworks : React 19 (environ 2 ans), Vue.js (environ 1 an) et Nuxt.js (environ 9 mois)
+- PWA hors ligne, internationalisation en 4 langues
+- Intégration fidèle de maquettes, dans des contextes de dette technique importante
 
 **Comment avez-vous acquis ces compétences ?**
 
-- Formation initiale C.U.E.E.P (2005-2007)
-- Expérience A M F (2008-2015) : développement autonome d'une application intranet (PHP, MySQL, JavaScript, HTML/CSS) à partir de 2011
-- Formation M2i Java Full Stack (2018)
-- 6 années d'expérience professionnelle chez Altima/Accenture (2018-2024)
-- Veille technologique, projets personnels et activité freelance (2024-2026)
+| Période | Source |
+|---|---|
+| 2005–2007 | BTS au C.U.E.E.P (Villeneuve d'Ascq) : programmation, multimédia et conception web |
+| 2011–2015 | A M F : outil intranet développé seul en PHP, JavaScript, HTML et CSS |
+| 2018 | M2i Formation, Java Full Stack (4 mois) : front-end JavaScript, HTML et CSS |
+| 2018–2024 | Altima/Accenture : sites e-commerce Ba&Sh, Picard, Camaïeu, Trëmma (Emmaüs), Brico Marché, POC headless Vue/Nuxt |
+| 2024–2025 | Autoformation : cours Udemy React (hooks, routing, Redux, bases de Next.js), CV en ligne en React |
+| 2025–aujourd'hui | Lexikos, projet personnel en production depuis 2025 |
 
 ---
 
 ## ⚠️ Note sur les preuves et la confidentialité
 
-**Contrainte professionnelle :** Durant mes 6 années chez Altima/Accenture, j'ai travaillé exclusivement sur des projets clients soumis à des clauses de confidentialité strictes (NDA). À chaque fin de mission, j'étais contractuellement tenu de supprimer tout document, code source ou capture d'écran relatif aux projets.
+Chez Altima/Accenture (2018–2024), je travaille sur des projets clients sous clause de confidentialité. À chaque fin de mission, je supprime tout code, document ou capture. Je démontre donc les mêmes compétences sur mes projets personnels, dont le code est public.
 
-**Ce que je peux fournir comme preuves :**
 | Type de preuve | Disponibilité |
-|----------------|---------------|
-| **Projets personnels** | ✅ Code source, sites en ligne, dépôts GitHub |
-| **Certification Salesforce** | ✅ Certificat officiel SFCC B2C Commerce Developer |
-| **Témoignages d'anciens collègues** | ⚠️ Attestations générales possibles sur demande |
-| **Code source des projets clients** | ❌ Non disponible (NDA) |
-| **Captures d'écran des projets clients** | ❌ Non disponible (NDA) |
-
-**Projets personnels démontrables :**
-
-- 🌐 CV en ligne : https://cv.gregory-day.fr/ (Node.js/Express, React, MongoDB, interface d'administration, déploiement Docker)
-- 🌐 Lexikos : https://lexikos.eu (Node.js/Express, React, Tailwind, MongoDB, intégration IA Mistral)
-- 🌐 Wanderline : https://wanderline.gregory-day.fr (repo afterLook — Node.js/Express, React, MongoDB, TDD, e2e Playwright, Docker)
-- 📁 Dépôts GitHub personnels correspondants (historique, PR, CI/CD)
+|---|---|
+| Lexikos (https://lexikos.eu), dépôt `neruuren/lexikos` | ✅ Site en production, code, historique Git |
+| MyWebCV (https://cv.gregory-day.fr), dépôt `neruuren/my_nodejs_webcv` | ✅ Site en production, code |
+| Certification SFCC B2C Commerce Developer (01/2020), Trailhead Ranger (2021) | ✅ Certificats |
+| Attestations d'anciens collègues | ⚠️ À obtenir |
+| Code et captures des projets clients | ❌ NDA |
 
 ---
 
@@ -48,31 +48,47 @@
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** je conçois et je produis seul. Sur Lexikos, je définis aussi les standards d'accessibilité et de SEO du projet.
 
-**Contexte :**
-Durant mes 6 années chez Altima/Accenture, j'ai travaillé sur de nombreux sites e-commerce (Ba&Sh, Picard, Camaïeu, Emmaüs/Trëmma, Brico Marché) nécessitant une structuration HTML rigoureuse pour le référencement et l'accessibilité.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Contexte :** Lexikos est une application web qui aide à mémoriser le vocabulaire anglais rencontré en regardant des films et des séries. Je la conçois et la développe seul. Elle est publique, donc elle doit être accessible et bien référencée.
 
-- Structuration sémantique des pages e-commerce avec balises HTML5 appropriées (header, nav, main, article, section, footer)
-- Optimisation SEO sur le site Ba&Sh : amélioration de la structure des URLs et optimisation du sitemap
-- Travail sur les balises meta (title, description, Open Graph) pour le référencement
-- Utilisation de Lighthouse pour auditer et améliorer les performances et l'accessibilité
-- Intégration de maquettes en respectant les bonnes pratiques d'accessibilité
-- Création de templates réutilisables sur Salesforce Commerce Cloud
+**Ce que j'ai fait :**
+- Je structure les pages avec des balises sémantiques : `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`.
+- Je rends l'interface utilisable au clavier et au lecteur d'écran. Le code compte 297 attributs `aria-*`, 97 rôles explicites et 26 textes réservés aux lecteurs d'écran (`sr-only`).
+- Je migre les fenêtres modales vers l'élément natif `<dialog>`, qui gère le focus et la touche Échap sans code maison.
+- Je mène un audit d'accessibilité complet de l'interface, puis je corrige les écarts relevés (commit `3cbd661`, 2026-09-03).
+- Je travaille le référencement : balises Open Graph et Twitter (commit `3aefa63`, 2026-02-14), `robots.txt`, sitemap généré côté serveur, fichier `llms.txt` pour les moteurs d'IA.
+- Comme Lexikos est une application React, les robots voient une page vide. Je fais donc produire au build des pages HTML déjà remplies pour le SEO (`frontend/scripts/prerender-seo.mjs`). J'ajoute aussi des données structurées JSON-LD sur les articles (`backend/middleware/articlePrerender.js`).
 
-**Résultats observés :**
+**Choix et arbitrages :** je choisis un prérendu ciblé plutôt qu'un rendu serveur complet (Next.js). Seules les pages publiques ont besoin d'être indexées. Migrer toute l'application aurait coûté trop cher pour ce gain.
 
-- Amélioration du référencement naturel des sites clients
-- Templates conformes aux standards W3C
-- Scores Lighthouse améliorés (accessibilité, SEO)
+**Résultat :** les pages publiques sont indexables et les parcours principaux sont utilisables au clavier.
 
-**Preuves disponibles :**
+**Difficulté et recul :** le `<html lang="en">` reste fixe alors que l'interface existe en 4 langues. C'est une piste d'amélioration identifiée.
 
-- ✅ CV en ligne personnel : https://cv.gregory-day.fr/ (code source auditable, audit Lighthouse réalisable)
-- ✅ Lexikos : https://lexikos.eu (audit Lighthouse réalisable)
-- ⚠️ Expériences clients (Ba&Sh, Picard, etc.) : témoignage possible d'anciens collègues, pas de preuve matérielle (NDA)
+### Situation 2 : Altima/Accenture, Ba&Sh (2018–2019) et Picard (2020)
+
+**Contexte :** je suis développeur SFCC (Salesforce Commerce Cloud, plateforme e-commerce en ligne) au sein d'une équipe.
+
+**Ce que j'ai fait :**
+- Sur Ba&Sh, j'optimise le SEO : structure des URL et sitemap.
+- Sur Picard, je crée des templates pour les pages de contenu.
+
+### Évolution de ma pratique
+
+Chez Accenture, j'applique le SEO sur un périmètre défini par l'équipe. Sur Lexikos, je décide seul de la stratégie : sémantique, audit d'accessibilité, prérendu, données structurées.
+
+### Preuves
+
+| Preuve | Type | Accès |
+|---|---|---|
+| Lexikos en production, audit Lighthouse réalisable en direct | Site | ✅ https://lexikos.eu |
+| Commit `3cbd661` : corrections après l'audit d'accessibilité | Code | ✅ dépôt Lexikos |
+| `frontend/scripts/prerender-seo.mjs`, `backend/middleware/articlePrerender.js` | Code | ✅ dépôt Lexikos |
+| Administration SEO du CV en ligne | Site | ✅ https://cv.gregory-day.fr |
+| Optimisation SEO Ba&Sh | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -82,33 +98,44 @@ Durant mes 6 années chez Altima/Accenture, j'ai travaillé sur de nombreux site
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** j'exécute et je produis. Sur Lexikos, je conçois aussi l'interface et l'expérience utilisateur.
 
-**Contexte :**
-Interventions sur des refontes graphiques complètes de sites e-commerce avec une forte exigence sur la fidélité aux maquettes et l'expérience utilisateur.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Contexte :** Lexikos combine apprentissage et jeu : quiz, répétition espacée, saisons, badges, boutique. L'interface doit rester claire malgré la richesse fonctionnelle.
 
-- Collaboration directe avec les designers via Figma pour l'intégration des maquettes
-- Adaptation des maquettes aux contraintes techniques (responsive, performances, faisabilité)
-- Refonte visuelle complète du site Camaïeu dans un contexte de dette technique importante
-- Refonte graphique du site Trëmma.co (Emmaüs) avec intégration fidèle des maquettes
-- Refonte du store locator Brico Marché avec nouvelles maquettes
-- Utilisation intensive de Sass (3 ans d'expérience) pour structurer et maintenir les feuilles de style
-- Application de la méthodologie BEM pour l'organisation du CSS
-- Refonte des pages "Mon compte" sur Picard pour une interface plus intuitive
+**Ce que j'ai fait :**
+- Je construis l'interface avec Tailwind CSS 3, une approche « utility-first » où le style s'écrit par petites classes réutilisables.
+- J'ajoute un mode sombre piloté par classe (`darkMode: 'class'`).
+- J'extrais un `critical.css`, qui contient le style minimal nécessaire au premier affichage.
+- Je reprends tout le site pour agrandir les zones tactiles, rendre le portail d'administration utilisable sur mobile et adapter la typographie à la taille d'écran (commit `49e03c0`, 2026-08-28).
+- Je conçois les retours d'interaction : indicateur hors ligne, bannière d'installation de l'application, états de chargement.
 
-**Résultats observés :**
+**Choix et arbitrages :** je choisis Tailwind plutôt que Sass. Sur un projet où je suis seul, les classes utilitaires évitent de maintenir une architecture de feuilles de style. Chez Accenture, en équipe, Sass et une convention de nommage étaient plus adaptés.
 
-- Sites visuellement conformes aux attentes des clients et des designers
-- Amélioration de l'expérience utilisateur
-- CSS maintenable grâce à l'architecture Sass et BEM
+**Résultat :** l'interface est cohérente entre les pages, en thème clair comme sombre.
 
-**Preuves disponibles :**
+### Situation 2 : Altima/Accenture, refontes graphiques (2021–2024)
 
-- ✅ CV en ligne : architecture Sass visible dans le code source
-- ✅ Lexikos : Tailwind CSS (approche utility-first)
-- ⚠️ Projets clients (Camaïeu, Trëmma, Brico Marché) : témoignage possible, pas de capture (NDA)
+**Ce que j'ai fait :**
+- **Trëmma.co pour Emmaüs (mai–juin 2021) :** refonte graphique complète et intégration fidèle des maquettes.
+- **Camaïeu (juillet–septembre 2021) :** refonte visuelle complète du site, dans un contexte de dette technique importante.
+- **Brico Marché (octobre–novembre 2021) :** refonte graphique complète du store locator.
+- **Picard (2021–2024) :** refonte de l'espace « Mon compte » pour une interface plus intuitive, pages personnalisables avec Page Designer.
+- J'utilise Sass pendant environ 3 ans.
+- Pour la méthode, j'échange avec les designers sur Figma `[À CONFIRMER]` et j'organise le CSS selon la convention BEM `[À CONFIRMER]`.
+
+### Évolution de ma pratique
+
+Je passe de l'intégration fidèle de maquettes fournies par d'autres, chez Accenture, à la conception complète de l'interface sur Lexikos.
+
+### Preuves
+
+| Preuve | Type | Accès |
+|---|---|---|
+| Lexikos : Tailwind, mode sombre, responsive | Site et code | ✅ https://lexikos.eu, `frontend/tailwind.config.js` |
+| Commit `49e03c0` : reprise responsive et tactile | Code | ✅ dépôt Lexikos |
+| Refontes Trëmma, Camaïeu, Brico Marché | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -118,33 +145,31 @@ Interventions sur des refontes graphiques complètes de sites e-commerce avec un
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** je conçois et je produis seul.
 
-**Contexte :**
-Tous les sites e-commerce développés devaient être parfaitement adaptatifs pour offrir une expérience cohérente sur mobile, tablette et desktop.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'applique une approche mobile-first avec les points de rupture de Tailwind. Le code compte environ 345 classes responsive (`sm:`, `md:`, `lg:`).
+- Je crée une navigation spécifique au mobile (`HeaderMobileNav.jsx`, `HeaderMobileOverlay.jsx`).
+- Je rends le portail d'administration utilisable sur mobile au même niveau que sur ordinateur (commit `49e03c0`).
+- Je rends l'application installable comme une application mobile (PWA), avec un fonctionnement hors ligne.
 
-- Développement d'interfaces responsive en approche **mobile-first**
-- Utilisation de frameworks CSS :
-  - **Bootstrap** : composants et grille responsive
-  - **Tailwind CSS** : approche utility-first sur Lexikos
-- Utilisation de techniques CSS modernes : Flexbox, Grid, media queries
-- Gestion de grids complexes avec affichages différents selon la taille d'écran
-- Développement d'interfaces responsive sur l'ensemble des projets Altima/Accenture
-- Développement d'un CV en ligne modulable et responsive (projet personnel 2024-2025)
-- Adaptation des composants e-commerce (panier, checkout, fiches produits) à tous les terminaux
+**Résultat :** l'application fonctionne sur téléphone, tablette et ordinateur. C'est démontrable en direct avec les outils de développement du navigateur.
 
-**Résultats observés :**
+### Situation 2 : Altima/Accenture et MyWebCV
 
-- Sites fonctionnels sur tous types d'écrans
-- Expérience utilisateur optimisée sur mobile
+- Chez Accenture, j'adapte les composants e-commerce à tous les terminaux : panier, tunnel d'achat, fiches produit, store locator Brico Marché.
+- J'utilise Bootstrap `[À CONFIRMER]`.
+- Sur MyWebCV (2024–2025), je rends le CV en ligne responsive et j'en fournis une version imprimable.
 
-**Preuves disponibles :**
+### Preuves
 
-- ✅ CV en ligne responsive : https://cv.gregory-day.fr/ (testable sur mobile/tablette/desktop)
-- ✅ Lexikos : https://lexikos.eu (React + Tailwind CSS, responsive, mobile-first)
-- ⚠️ Projets clients : témoignage possible, pas de capture (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| Lexikos responsive et installable | Site | ✅ https://lexikos.eu |
+| MyWebCV responsive | Site | ✅ https://cv.gregory-day.fr |
+| Sites clients | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -154,30 +179,37 @@ Tous les sites e-commerce développés devaient être parfaitement adaptatifs po
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** j'exécute et je produis, en autonomie.
 
-**Contexte :**
-Plus de 10 ans de pratique de JavaScript (premiers développements professionnels chez A M F dès 2011, puis quotidiennement chez Altima/Accenture et sur les projets personnels), avec une montée en compétence sur TypeScript lors des projets headless.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- J'écris l'application en JavaScript moderne : modules ES, `async/await`, déstructuration.
+- Je développe 18 hooks React personnalisés, qui regroupent la logique réutilisable.
+- Je programme les interactions : quiz, indices, prononciation, mode conversation avec une IA, répétition espacée.
+- Je développe le mode hors ligne. Les réponses aux quiz sont stockées dans le navigateur (IndexedDB) puis envoyées au serveur au retour du réseau (`src/offline/quizOutbox.js`, `syncManager.js`).
+- J'assainis le HTML affiché avec DOMPurify, pour empêcher l'injection de scripts.
 
-- Développement de fonctionnalités interactives sur les sites e-commerce SFCC
-- Validation de formulaires côté client (checkout, inscription, contact)
-- Animations et interactions utilisateur pour améliorer l'engagement
-- Développement en TypeScript sur le POC SFCC headless (9 mois)
-- Refonte complète du processus de checkout Ba&Sh avec refactorisation majeure du code JavaScript
+**Choix et arbitrages :** Lexikos est en JavaScript, pas en TypeScript. J'ai privilégié la vitesse de développement en solo. Avec le recul, la taille actuelle du code (plus de 1 000 commits) justifierait une migration progressive.
 
-**Résultats observés :**
+### Situation 2 : Altima/Accenture et A M F
 
-- Amélioration de l'expérience utilisateur et de l'engagement
-- Code maintenable et performant
+- **A M F (2011–2015) :** je développe seul en JavaScript et PHP l'outil intranet de la plateforme d'assistance technique.
+- **Ba&Sh (2018–2019) :** je refonds et refactorise en profondeur le processus de checkout, en JavaScript côté serveur SFCC.
+- **POC headless (2020–2021) :** je développe en TypeScript pendant environ 9 mois.
+- **Picard, Camaïeu :** je développe les interactions avec jQuery (environ 2,7 ans au total).
 
-**Preuves disponibles :**
+### Évolution de ma pratique
 
-- ✅ Certification SFCC B2C Commerce Developer (certificat officiel)
-- ✅ Lexikos : https://lexikos.eu (JavaScript/React)
-- ✅ Code JavaScript visible sur projets personnels GitHub
-- ⚠️ Projets clients (Ba&Sh, POC headless) : témoignage possible (NDA)
+J'ai commencé par du JavaScript procédural chez A M F, puis jQuery et JavaScript serveur chez Accenture, puis TypeScript sur le POC. Aujourd'hui, j'écris du JavaScript moderne structuré en hooks et en services.
+
+### Preuves
+
+| Preuve | Type | Accès |
+|---|---|---|
+| Code front Lexikos (`frontend/src/hooks`, `src/offline`) | Code | ✅ dépôt Lexikos |
+| Certification SFCC B2C Commerce Developer (01/2020) | Certificat | ✅ https://www.salesforce.com/trailblazer/grday |
+| Checkout Ba&Sh, POC TypeScript | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -187,27 +219,32 @@ Plus de 10 ans de pratique de JavaScript (premiers développements professionnel
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** je conçois et je produis seul.
 
-**Contexte :**
-Les sites e-commerce nécessitent des interactions fluides sans rechargement de page pour le panier, les filtres produits, et les validations.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je centralise les appels à l'API dans une instance axios (`frontend/src/utils/api.js`).
+- Je gère la session sans interrompre l'utilisateur : le jeton d'accès est renouvelé avant son expiration (`tokenRefresh.js`).
+- Je traite les réponses d'erreur de façon explicite : 401 pour une session expirée, 403 pour un accès refusé, 429 pour trop de requêtes.
+- J'utilise des WebSockets (Socket.IO) pour les échanges en temps réel du mode conversation.
+- Je synchronise en arrière-plan les réponses données hors ligne.
 
-- Optimisation du panier et du mini-panier sur Picard pour fluidifier le processus d'achat (ajout/suppression sans rechargement)
-- Intégration d'API tierces pour la gestion des créneaux de livraison (Picard)
-- Développement de fonctionnalités AJAX sur le checkout Ba&Sh
-- Utilisation de fetch API et axios dans les projets React/Vue.js
+**Résultat :** l'utilisateur ne voit ni rechargement de page ni déconnexion brutale.
 
-**Résultats observés :**
+### Situation 2 : Altima/Accenture, Picard (2021–2024)
 
-- Amélioration significative de la réactivité des interfaces
-- Réduction des temps de chargement perçus par l'utilisateur
+- J'optimise le panier et le mini-panier pour fluidifier le tunnel d'achat.
+- J'intègre une API tierce de gestion des créneaux de livraison.
+- Je développe des fonctionnalités AJAX sur le checkout Ba&Sh.
 
-**Preuves disponibles :**
+### Preuves
 
-- ✅ Utilisation de fetch/axios visible dans projets personnels
-- ⚠️ Projets clients (Picard, Ba&Sh) : témoignage possible (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| Appels API visibles dans l'onglet Réseau de Lexikos | Démo | ✅ https://lexikos.eu |
+| `frontend/src/utils/api.js`, `tokenRefresh.js` | Code | ✅ dépôt Lexikos |
+| Panier et créneaux Picard | Témoignage | ⚠️ NDA |
 
 ---
 
@@ -217,45 +254,53 @@ Les sites e-commerce nécessitent des interactions fluides sans rechargement de 
 
 > Réalisé avec aisance, en autonomie totale
 
-### Description des activités
+**Place occupée :** je choisis le framework et je définis l'architecture front-end de mes projets.
 
-**Contexte :**
-Montée en compétence progressive sur les frameworks modernes, d'abord en contexte professionnel (Vue.js/Nuxt.js), puis en autonomie complète sur React avec trois applications complètes en production.
+### Situation 1 : Lexikos (2025–2026)
 
-**Actions réalisées :**
+**Ce que j'ai fait :**
+- Je construis l'application avec React 19 et Vite.
+- Je mets en place le routage avec React Router : pages chargées à la demande (`lazy()`), routes protégées pour les utilisateurs connectés et pour les administrateurs.
+- Je gère l'état partagé avec des contextes React (authentification, utilisateur, réglages, modales).
+- J'internationalise l'interface avec react-i18next : 4 langues (anglais, français, allemand, espagnol) et 27 fichiers de traduction par langue.
+- Je transforme l'application en PWA avec `vite-plugin-pwa`.
 
-- **Vue.js / Nuxt.js (1 an) :**
-  - POC SFCC headless avec architecture API-first (2020-2021)
-  - Modifications et optimisations des composants Vue.js sur Trëmma.co et Brico Marché
-  - Utilisation de GraphQL pour les échanges de données
+**Choix et arbitrages :** j'utilise les contextes React plutôt que Redux. L'état global est limité, et les contextes suffisent sans ajouter de dépendance.
 
-- **React (depuis 2024) :**
-  - Formation intensive et autonome (Udemy — hooks, routing, Redux, bases de Next.js)
-  - Trois applications React complètes conçues, développées et déployées en production en autonomie totale :
-    - **MyWebCV** (2024-2026) : CV interactif avec interface d'administration sur mesure
-    - **Lexikos** (2025-2026) : quiz interactifs, système de répétition espacée
-    - **Wanderline** (2026) : carnets de voyage, carte interactive, frise chronologique
-  - Maîtrise des hooks, du state management, du cycle de vie des composants, tests front avec Vitest
+### Situation 2 : Altima/Accenture et autres projets personnels
 
-- **jQuery (2,7 ans) :**
-  - Utilisation sur les projets SiteGenesis (Picard, Camaïeu)
+- **POC SFCC headless (2020–2021, environ 9 mois) :** je développe un site e-commerce avec Vue.js et Nuxt.js, séparé du back-end, avec GraphQL et TypeScript.
+- **Trëmma (2021) :** j'optimise des composants Vue.js.
+- **Brico Marché (2021) :** je développe des composants Vue.js.
+- **MyWebCV (2024–2025) :** premier projet React, avec une interface d'administration sur mesure.
 
-**Résultats observés :**
+### Évolution de ma pratique
 
-- POC headless fonctionnel démontrant l'architecture moderne
-- Projets React personnels opérationnels
-- Montée en compétence rapide et autonome
+J'ai découvert les frameworks en équipe avec Vue.js et Nuxt.js. Ensuite, je me suis formé seul à React (cours Udemy), puis je l'ai appliqué sur MyWebCV et sur Lexikos, jusqu'à une PWA multilingue en production.
 
-**Preuves disponibles :**
+### Preuves
 
-- ✅ Lexikos : https://lexikos.eu (React + Tailwind, projet complet en production)
-- ✅ Wanderline : https://wanderline.gregory-day.fr (React, projet complet en production)
-- ✅ MyWebCV : https://cv.gregory-day.fr/ (React, interface d'administration)
-- ⚠️ POC SFCC headless, Trëmma, Brico Marché : témoignage possible (NDA)
+| Preuve | Type | Accès |
+|---|---|---|
+| Lexikos | Site et code | ✅ https://lexikos.eu, dépôt Lexikos |
+| MyWebCV | Site et code | ✅ https://cv.gregory-day.fr |
+| POC headless, Trëmma, Brico Marché | Témoignage | ⚠️ NDA |
 
 ---
 
-## 📋 À compléter
+## 📋 Actions à mener
 
-1. **Préparer les attestations** : Identifier 1-2 anciens collègues pour une attestation générale
-2. **Score Lighthouse** : Faire un audit du CV en ligne et de Wanderline pour avoir des métriques concrètes
+| Action | Compétence | Priorité |
+|---|---|---|
+| Lancer un audit Lighthouse de Lexikos et garder les scores en annexe | C1, C3 | Haute |
+| Rendre l'attribut `lang` dynamique selon la langue choisie | C1 | Moyenne |
+| Ajouter des tests front sur Lexikos (Vitest) | C6 | Moyenne |
+| Obtenir 1 ou 2 attestations d'anciens collègues d'Accenture | C1–C5 | Haute |
+
+## ❓ Éléments à confirmer
+
+| Élément | Question |
+|---|---|
+| Figma | As-tu travaillé directement dans Figma avec les designers chez Accenture ? |
+| BEM | L'équipe appliquait-elle la convention BEM au CSS ? |
+| Bootstrap | Sur quel projet as-tu utilisé Bootstrap ? |
