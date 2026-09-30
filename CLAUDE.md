@@ -13,10 +13,12 @@ Ce n'est pas un projet de code : ce sont des documents Markdown qui servent à r
 
 ## Projet de démonstration : Lexikos
 
-**Lexikos** (https://lexikos.eu) est le projet fil rouge. Toute démonstration, tout exemple et toute préparation d'oral part de Lexikos en priorité.
-Stack : Node.js/Express, React, Tailwind, MongoDB, API REST + JWT, intégration Mistral AI, Docker compose sur VPS OVH, GitHub Actions, backups cron mongodump.
+**Lexikos** (https://lexikos.eu, dépôt local `~/development/lexikos`) est le **seul projet montré**. Toute démonstration, tout exemple et toute preuve technique viennent de Lexikos.
+Stack : React 19 + Vite + Tailwind (PWA, i18n 4 langues), Node.js/Express en couches, MongoDB + Redis, connexion par code OTP + JWT et refresh token, Mistral AI, Stripe/PayPal, VPS OVH avec Nginx et PM2 en cluster, déploiement GitHub Actions par SSH, sauvegardes cron + copie Backblaze B2, tests Jest et k6.
 
-Renforts : Altima/Accenture 2018–2024 (e-commerce SFCC, Scrum, sous NDA), WebCV (cv.gregory-day.fr), AMF 2011–2015 (PHP/MySQL). Wanderline existe mais n'est plus le projet vitrine : une preuve qui ne repose que sur Wanderline doit trouver son équivalent Lexikos.
+Récits sans démonstration : Altima/Accenture 2018–2024 (e-commerce SFCC, sous NDA) et A M F 2011–2015 (PHP/MySQL). MyWebCV peut servir de preuve écrite secondaire.
+
+**Aucun autre projet personnel n'est cité**, ni dans les fichiers ni à l'oral, en dehors de Lexikos et de MyWebCV. Le candidat veut un seul site de démonstration.
 
 ## Carte des fichiers
 
@@ -24,8 +26,8 @@ Renforts : Altima/Accenture 2018–2024 (e-commerce SFCC, Scrum, sous NDA), WebC
 |---|---|
 | `competences.csv` | Référentiel source : texte officiel de C1–C35 (séparateur `;`) |
 | `bloc1_frontend.md` … `bloc4_projet.md` | Une fiche par compétence : niveau, contexte, actions, résultats, preuves. **Source de vérité des niveaux.** |
-| `synthese_vae.md` | Tableaux de niveaux, stratégie de preuves, réponses types au jury |
-| `presentation_jury.md` | Stratégie et déroulé de l'oral (encore centré sur Wanderline, à basculer vers Lexikos) |
+| `synthese_vae.md` | État du dossier : niveaux, couverture, angles de défense, plan d'action |
+| `presentation_jury.md` | Tout l'oral : stratégie, déroulé, démonstrations par compétence, réponses types, kit |
 | `README.md` | Consignes du dossier : échelle 1–4, place occupée, questions de synthèse par bloc |
 
 ## Règles
@@ -45,4 +47,4 @@ Renforts : Altima/Accenture 2018–2024 (e-commerce SFCC, Scrum, sous NDA), WebC
 | `vae-competence` | Rédiger ou réviser la fiche d'une compétence Cn |
 | `vae-livret2` | Assembler, structurer, relire ou exporter le dossier de validation |
 | `vae-jury` | Préparer l'oral ou simuler un entretien avec le jury |
-| `vae-coherence` | Auditer le dossier : niveaux, preuves, couverture, dépendances à Wanderline |
+| `vae-coherence` | Auditer le dossier : niveaux, preuves, couverture, mentions de projets hors Lexikos |
