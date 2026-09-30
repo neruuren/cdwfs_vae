@@ -173,7 +173,7 @@
 > Définir et appliquer des procédures de fusion de code et de résolution de conflits à l'aide de plateformes telles que GitHub ou GitLab pour faciliter le travail collaboratif, la révision de code et l'intégration continue (CI).
 
 - **Attendus :** Stratégie de branches, pull/merge requests, revue, résolution de conflits, CI sur PR.
-- **Preuve Lexikos :** À montrer : flux branche → PR → checks sur Lexikos (aujourd'hui surtout sur Wanderline).
+- **Preuve Lexikos :** 61 pull requests. À ajouter : vérifications CI bloquantes sur chaque PR.
 
 ### C23
 
@@ -263,7 +263,7 @@
 > Concevoir et mettre en œuvre des tests automatisés en employant les meilleures pratiques et outils de test et en tenant compte des contraintes techniques et des exigences de performance pour valider la fiabilité et l'efficacité des applications.
 
 - **Attendus :** Stratégie de tests automatisés (pyramide), unitaires, intégration, e2e, couverture, performance.
-- **Preuve Lexikos :** Jest sur Lexikos. e2e et couverture à ajouter pour égaler Wanderline.
+- **Preuve Lexikos :** 89 fichiers Jest, Supertest, k6. À ajouter : tests front, parcours de bout en bout, couverture en CI.
 
 ### C35
 

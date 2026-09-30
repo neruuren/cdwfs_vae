@@ -1,6 +1,6 @@
 ---
 name: vae-coherence
-description: Auditer la cohérence du dossier VAE Concepteur Développeur Web Full Stack (RNCP 39608) - niveaux identiques entre fichiers de bloc et synthèse, compteurs, preuves présentes pour chaque compétence, taux de couverture par rapport au repère 3iL de 80-85 %, trous du référentiel (veille multilingue, Swagger) et preuves qui dépendent seulement de Wanderline au lieu de Lexikos. Utiliser avant d'assembler le livret 2, après avoir modifié plusieurs compétences, ou sur « vérifie le dossier », « audit », « où en suis-je ».
+description: Auditer la cohérence du dossier VAE Concepteur Développeur Web Full Stack (RNCP 39608) - niveaux identiques entre fichiers de bloc et synthèse, compteurs, preuves présentes pour chaque compétence, taux de couverture par rapport au repère 3iL de 80-85 %, trous du référentiel (veille multilingue, Swagger) et mentions de projets personnels autres que Lexikos. Utiliser avant d'assembler le livret 2, après avoir modifié plusieurs compétences, ou sur « vérifie le dossier », « audit », « où en suis-je ».
 ---
 
 # Audit de cohérence du dossier VAE
@@ -26,18 +26,21 @@ Pour chaque compétence, dans son fichier de bloc :
 - un niveau 3 ou 4 a une preuve accessible au jury, pas seulement « témoignage possible » ;
 - les preuves annoncées « ✅ » correspondent à quelque chose qui existe. Si c'est vérifiable (lien, fichier), le vérifier. Sinon, le lister comme « à confirmer par le candidat ».
 
-### 3. Dépendance à Wanderline
+### 3. Projet unique : Lexikos
 
-Lexikos est le projet de démonstration. Relever chaque compétence dont la preuve principale ne cite que Wanderline ou afterLook. Points connus au 2026-09-30 :
+Lexikos est le seul projet montré, à la demande du candidat.
 
-| Compétence | Preuve actuelle | Équivalent Lexikos à produire |
-|---|---|---|
-| C8 | SOLID documenté dans le README Wanderline | Section architecture du README Lexikos |
-| C13 | Test e2e de restauration Wanderline | Restauration testée et documentée du mongodump Lexikos |
-| C16, C34 | TDD, Supertest, Playwright sur Wanderline | Tests d'intégration et au moins un e2e sur Lexikos |
-| C17 | Aucune | Swagger/OpenAPI sur l'API Lexikos |
-| C22 | 76+ PR et CI bloquante sur Wanderline | Flux branche → PR → checks sur Lexikos |
-| C25 | Pipeline 4 jobs Wanderline | Vérifier que le workflow Lexikos bloque le déploiement sur test rouge |
+- Relever tout projet personnel cité en dehors de Lexikos et de MyWebCV. Toute occurrence est un écart à signaler.
+- MyWebCV est toléré comme preuve écrite secondaire, jamais comme démonstration.
+- Lister les compétences dont la preuve Lexikos reste à produire. Points connus au 2026-09-30 :
+
+| Compétence | Preuve Lexikos à produire |
+|---|---|
+| C13 | Test de restauration automatique de la dernière sauvegarde |
+| C17 | Documentation OpenAPI avec Swagger UI |
+| C22, C25 | Lint et tests bloquants dans la CI, sur les PR et avant déploiement |
+| C23 | Dockerfile de l'API, ou retrait du `docker-compose.yml` inutilisé |
+| C34 | Tests front et parcours de bout en bout |
 
 Mettre ce tableau à jour dans le rapport selon l'état réel des fichiers.
 
@@ -52,7 +55,7 @@ Dates, noms d'employeurs, durées et chiffres identiques dans tous les fichiers 
 
 ### 6. Documents de préparation
 
-Signaler si `presentation_jury.md` ou `synthese_vae.md` présentent encore Wanderline comme projet principal.
+Signaler si `presentation_jury.md` ou `synthese_vae.md` citent un autre site de démonstration que Lexikos.
 
 ## Format du rapport
 

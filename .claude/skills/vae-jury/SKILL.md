@@ -7,7 +7,7 @@ description: Préparer l'entretien avec le jury de la VAE Concepteur Développeu
 
 Lire d'abord `presentation_jury.md` et `synthese_vae.md`, puis les fiches de bloc concernées. Le livret 2 est la base de l'entretien : les questions partent de ce qui est écrit.
 
-**Lexikos est le fil rouge.** `presentation_jury.md` est encore construit autour de Wanderline. En mode préparation, proposer de le réécrire autour de Lexikos.
+**Lexikos est le seul projet montré.** Toutes les démonstrations et questions techniques portent sur Lexikos. Accenture et A M F viennent en récit, sans démonstration. Ne citer aucun autre projet personnel, sauf MyWebCV comme preuve écrite secondaire.
 
 ## Mode 1 : préparation
 
