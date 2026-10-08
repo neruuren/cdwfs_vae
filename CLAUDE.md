@@ -25,14 +25,23 @@ Récits sans démonstration : Altima/Accenture 2018–2024 (e-commerce SFCC, sou
 | Fichier | Rôle |
 |---|---|
 | `competences.csv` | Référentiel source : texte officiel de C1–C35 (séparateur `;`) |
-| `bloc1_frontend.md` … `bloc4_projet.md` | Une fiche par compétence : niveau, contexte, actions, résultats, preuves. **Source de vérité des niveaux.** |
-| `synthese_vae.md` | État du dossier : niveaux, couverture, angles de défense, plan d'action |
-| `presentation_jury.md` | Tout l'oral : stratégie, déroulé, démonstrations par compétence, réponses types, kit |
+| `positionnement_initial.md` | Grille d'auto-positionnement remplie par le candidat (état A–D par compétence). **Source de vérité tant que les fiches ne sont pas réécrites.** |
+| `ebauche_ia/` | Premier jet produit par des IA (fiches de bloc, synthèse, présentation jury). **Non validé, niveaux non fiables.** Matière brute uniquement. |
 | `README.md` | Consignes du dossier : échelle 1–4, place occupée, questions de synthèse par bloc |
+
+## Rôle de l'IA dans ce dépôt
+
+Le premier jet a été rédigé trop vite par des IA. Il ne reflète ni le niveau réel ni la voix du candidat. Désormais :
+
+- **L'IA ne rédige pas les fiches.** Elle pose les questions, relance comme un jury, extrait des faits vérifiables du dépôt Lexikos (`~/development/lexikos`), relit et signale les incohérences.
+- **Le candidat écrit ses fiches avec ses mots.** L'IA peut corriger l'orthographe ou signaler une phrase floue, mais ne réécrit pas le style.
+- **Un niveau = ce que le candidat sait expliquer à l'oral, sans notes.** Une fonctionnalité de Lexikos que le candidat ne sait pas réexpliquer ne justifie pas un niveau 3 ou 4.
+- Le contenu de `ebauche_ia/` ne se recopie pas tel quel. On peut s'en servir comme liste de pistes à vérifier.
+- Le candidat a développé Lexikos avec une forte aide de l'IA, en gardant la main sur l'architecture. Ce point s'assume dans le dossier, avec ses mots.
 
 ## Règles
 
-- **Un niveau se modifie d'abord dans le fichier de bloc**, puis dans `synthese_vae.md` (tableau du bloc, répartition, compteurs). Les deux doivent toujours concorder.
+- **Un niveau se fixe à partir de `positionnement_initial.md`**, rempli par le candidat. Les fiches rédigées plus tard doivent concorder avec cette grille.
 - **Échelle de maîtrise** : 1 jamais ou participation mineure, 2 ponctuel avec assistance, 3 maîtrisé ou récurrent, 4 aisance et autonomie totale.
 - **Écrire comme France VAE le demande** : en français, au « je », au présent, verbes d'action, phrases courtes, jargon expliqué.
 - **Ne jamais inventer** une expérience, un chiffre, une date ou une preuve. S'il manque une information, poser la question au candidat.
@@ -40,6 +49,8 @@ Récits sans démonstration : Altima/Accenture 2018–2024 (e-commerce SFCC, sou
 - Les niveaux faibles s'assument et s'argumentent. Ne pas gonfler un niveau.
 
 ## Skills du projet
+
+> ⚠️ Les skills ont été écrits pour l'ancienne organisation (fiches de bloc à la racine, IA rédactrice). Ils pointent maintenant vers `ebauche_ia/` et sont à adapter : `vae-competence` passera en mode entretien (l'IA interroge, le candidat rédige). D'ici là, ne pas utiliser `vae-competence` pour rédiger une fiche.
 
 | Skill | Quand l'utiliser |
 |---|---|

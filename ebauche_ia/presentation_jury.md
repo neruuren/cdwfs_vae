@@ -1,3 +1,5 @@
+> ⚠️ **Brouillon généré par IA, non validé par le candidat.** Les niveaux et les formulations ne sont pas fiables. Matière brute à vérifier, pas un document à présenter.
+
 # 🎤 Quoi présenter au jury : stratégie et déroulé
 
 > Ce document regroupe tout ce qui concerne l'oral : stratégie, déroulé, démonstrations par compétence, réponses types et kit.

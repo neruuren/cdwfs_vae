@@ -1,3 +1,5 @@
+> ⚠️ **Brouillon généré par IA, non validé par le candidat.** Les niveaux et les formulations ne sont pas fiables. Matière brute à vérifier, pas un document à présenter.
+
 # BLOC 4 : Gérer les projets numériques et collaborer à l'amélioration continue des systèmes d'information
 
 > Sources recoupées le 2026-09-30 : CV en ligne (https://cv.gregory-day.fr/api/resume.json) et dépôt `neruuren/lexikos`.

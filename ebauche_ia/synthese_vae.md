@@ -1,3 +1,5 @@
+> ⚠️ **Brouillon généré par IA, non validé par le candidat.** Les niveaux et les formulations ne sont pas fiables. Matière brute à vérifier, pas un document à présenter.
+
 # 📊 Synthèse VAE - Concepteur Développeur Web Full Stack (RNCP 39608)
 
 > Ce document donne l'état du dossier : niveaux, couverture, points faibles, plan d'action.

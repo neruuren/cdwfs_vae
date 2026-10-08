@@ -1,3 +1,5 @@
+> ⚠️ **Brouillon généré par IA, non validé par le candidat.** Les niveaux et les formulations ne sont pas fiables. Matière brute à vérifier, pas un document à présenter.
+
 # BLOC 2 : Concevoir et réaliser des applications et des services back-end sur des architectures serveur complexes
 
 > Sources recoupées le 2026-09-30 : CV en ligne (https://cv.gregory-day.fr/api/resume.json) et dépôts `neruuren/lexikos` et `neruuren/my_nodejs_webcv`.
