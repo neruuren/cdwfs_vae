@@ -58,8 +58,24 @@ A force de tester divers solutions, c'est devenu clair qu'il fallait importer un
 
 ### Quatre langues dès le départ
 
-J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue étrangère. je voulais que dès le départ ma solution propose plusieurs langues. Mais je ne voulais en proposer trop d'un coup pour ne pas me surcharger. Je me suis dis que 4 langues suffiraient au départ. quitte à en rajouter plus tard. Les 4 langues de base sont le Français, l'Anglais, l'Espagnol, l'Allemand. L'idée c'est que ce soit utilisable dans n'importe quelle combinaison. Par exempe, un Allemand peut y apprendre l'Espagnol. L'interface est écrite dans la langue maternelle de l'utilisateur.
+J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue étrangère. je voulais que dès le départ ma solution propose plusieurs langues. Mais je ne voulais en proposer trop d'un coup pour ne pas me surcharger. Je me suis dis que 4 langues suffiraient au départ. quitte à en rajouter plus tard. Les 4 langues de base sont le Français, l'Anglais, l'Espagnol, l'Allemand. L'idée c'est que ce soit utilisable dans n'importe quelle combinaison. Par exempe, un Allemand peut y apprendre l'Espagnol. L'interface est écrite dans la langue maternelle de l'utilisateur (la landing page s'affiche dans la langue du navigateur avec un fallback sur l'anglais, puis le user sélectionne sa langue maternelle lors de la création de son compte).
 avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à des variations (conjugaisons, divers formes grammaticales), ainsi qu'à des traductions. Le dictionnaire installé est donc très complet.
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
 
+
+En même temps que je mettais en place le dictionnaire, j'ai eu énormément d'idées qui ont jaillies et que j'ai notées pour de futur développements.
+il y a eu d'abord l'authentification qui fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie, le token est inséré dans les requetes qui parcours les routes qui sont protégées.
+la gamification : les badges octroyés quand un objectif est atteind, les niveaux qui débloquent des fonctionnalités, la monnaie qui permet d'accélérer la progression et d'acheter du cosmétique.
+la prononciation : un modèle qui génère des phrases, un modèle qui génère une voix pour dire la phrase, un modèle qui analyse si la prononciation est correcte.  Mise en place d'un cache pour sauvegarder les phrases générées afin de les réutiliser. 
+la conversation
+la mise en place du projet sur un VPS
+la sauvegarde de la base de données sur un hébergeur indépendant
+la boutique
+le système qui permet de générer des listes de mots en partant d'un sujet ou d'un livre libre de droits.
+la page profil
+les pages légales
+l'interface admin!!!!
+
+
+énorme difficulté pour moi : satisfaire les exigences des utilisateurs!!!!
 
