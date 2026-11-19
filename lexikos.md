@@ -44,23 +44,25 @@ outillage posé dès le départ : ESLint, Prettier, Husky, Jest
 Concernant la bdd, j'ai utilisé mongodb. Je n'avais pas encore d'expériences sur cette solution et je voulais essayer quelquechose de nouveau pour moi.
 j'ai utilisé dès le début git et un repo github, c'est, je trouve une des choses les plus importante à maîtriser dans le quotidien d'un développeur.
 
-## Le quiz et la gamification
 
-
+# Le backend
 
 ## Le dictionnaire
 
 ### Premiers POC : l'utilisateur saisit ses mots
 
-j'ai fait des POC. Puisque le USER est maitre des mots qu'il souhaite d'apprendre (c'est vraiment le plus important pour moi), au début, le user saisissait ses couples de mots langue cible/langue maternelle, le couple était associé dans la base, le quiz piochait les couples et proposait au user de retrouver la trad. Mais c'était donner trop de confiance au user. sur sa capacité à ne pas faire d'erreurs de saisie ou de traduction, ce qui ne tiens pas debout si l'appli est ouverte à d'autres personnes. Je me suis donc dis qu'il fallait mettre en place un controle sur les traductions, mais aussi un dictionnaire.
+j'ai fait des POC. Puisque le USER est maitre des mots qu'il souhaite d'apprendre (c'est vraiment le plus important pour moi), au début, le user saisissait ses couples de mots langue cible/langue maternelle, le couple était associé dans la base, mais c'était donner beaucoup trop de confiance au user sur sa capacité à ne pas faire d'erreurs de saisie ou de traduction. ce qui ne tiens pas debout car la source d'erreurs de saisies et d'erreurs suite à des incompréhensions humaines est majorée. Je me suis donc dis qu'il fallait mettre en place un controle sur les traductions, mais aussi un dictionnaire.
 
-### Fausse piste : construire le dictionnaire via des API
+J'ai aussi exploré l'idée de constituer le dictionnaire petit à petit, au fil des recherches des utilisateurs, donc de connecter l'appli à une API qui retourne la traduction par rapport au mot saisi, et que le retour soit enregistré dans la bdd.
+j'ai essayé plusieurs fournisseurs de traduction proposant une entrée API. Certains étaient bien trop chères, d'autres peu précis. J'ai même envisagé serieusement de brancher une API de LLM mais les réponses n'étaient pas toujours cohérentes.
+C'était donner trop de confiance dans le retour de l'API, le temps de réponse était trop long, il aurait fallut des années pour constituer une bdd solide, et le cout d'appels API faisait exploser les couts sur le long terme.
 
-J'ai exploré l'idée de constituer le dictionnaire petit à petit, au fil des recherches des utilisateurs, donc de connecter l'appli à une API qui retourne la traduction par rapport au mot saisi, et que le retour soit enregistré dans la bdd, mais c'était la aussi donner trop de confiance dans la saisie de l'utilisateur, trop de confiance dans le retour de l'API, le temps de réponse était trop long, il aurait fallut des années pour constituer une bdd solide, et le cout d'appels API était bien trop élevé. certaines étaient cohérentes dans la vérification du texte et dans les réponses, mais c'était hors de prix. j'ai même tenté de requéter les API d' IA pour me fournir la réponse à une traduction, mais il arrivait qu'elle réponde des incohérenses.
+Tout cela m'a permis de comprendre que j'avais besoin pour chaque mot saisi par le user, de savoir son PartOfSpeech (partie grammaticale, pluriel/singulier, verbe à l'infinitif/conjugué... ), ainsi que les traductions possibles.
 
 ### La solution : importer Wiktionary
 
-A force de tester divers solutions, c'est devenu clair qu'il fallait importer un dictionnaire dans la bdd. J'ai recherché les solutions openSource et ait trouvé la solution wiktionnary (licence CC BY-SA 4.0). J'ai créé un script d'importation qui télécharge les dumps dans les langues souhaitées, les parcourt entièrement et en extrait uniquement les données souhaitées pour les besoins du projet.
+A force de tester divers solutions, c'est devenu clair qu'il fallait que mon appli utilise son propre dictionnaire, présent dans la bdd, donc, requétable très rapidement. J'ai recherché les solutions openSource et ait trouvé la solution wiktionnary (licence CC BY-SA 4.0). J'ai créé un script d'importation qui télécharge les dumps dans les langues souhaitées, les parcourt entièrement et en extrait uniquement les données souhaitées pour les besoins du projet.
+wiktionnary m'a permis d'importer lemmes, variantes, partOfSpeech, catégories. Le script est optimisé pendant des semaines (points de reprise, journaux, insertions par lots).
 
 ### Quatre langues dès le départ
 
@@ -68,10 +70,24 @@ J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue �
 avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à des variations (conjugaisons, divers formes grammaticales), ainsi qu'à des traductions. Le dictionnaire installé est donc très complet.
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
 
+## l'authentification
 
-En même temps que je mettais en place le dictionnaire, j'ai eu énormément d'idées qui ont jaillies et que j'ai notées pour de futur développements.
-il y a eu d'abord l'authentification qui fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie, le token est inséré dans les requetes qui parcours les routes qui sont protégées.
-la gamification : les badges octroyés quand un objectif est atteind, les niveaux qui débloquent des fonctionnalités, la monnaie qui permet d'accélérer la progression et d'acheter du cosmétique.
+fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie de 15 min, le token est inséré dans les requetes qui parcours les routes qui sont protégées.
+un autre token est généré qui lui à une durée de vie de 30 jours. Ce 2 eme token est un cookie http. quand le token de 15 min est expiré, le 2eme token de 30 jours est contrôlé pour regénérer le token de 15min, en même temps que celui de 30jours. Ainsi, un user peux ne jamais se faire déloguer s'il utilise l'appli régulièrment. Par contre, un utilisateur banni se verra sa possibilité de renouvellement de cookie suspendue.
+Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire.
+
+
+## Le quiz et la gamification
+
+les badges octroyés quand un objectif est atteind, les niveaux qui débloquent des fonctionnalités, 
+la monnaie qui permet d'accélérer la progression et d'acheter du cosmétique.
+
+
+
+
+## TODO
+
+
 la prononciation : un modèle qui génère des phrases, un modèle qui génère une voix pour dire la phrase, un modèle qui analyse si la prononciation est correcte.  Mise en place d'un cache pour sauvegarder les phrases générées afin de les réutiliser. 
 la conversation
 la mise en place du projet sur un VPS
