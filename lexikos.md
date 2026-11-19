@@ -40,7 +40,13 @@ Initialement, je voulais juste informatiser le jeu avec les petits papiers, uniq
 
 Avant de me lancer sur Lexikos, j'ai voulu rajouter des cordes à mon arc. je me suis formé sur Express, ainsi que sur REACT.js. ça faisait longtemps que je voulais acquérir ces compétences
 J'ai ensuite créé un template 'hello world' de projet. Il s'agit d'un monorepo avec un front REACT et une API Express/Node.js. L'architecture client/serveur est donc découplée. Je suis parti de ça pour initialiser le projet.
+outillage posé dès le départ : ESLint, Prettier, Husky, Jest
 Concernant la bdd, j'ai utilisé mongodb. Je n'avais pas encore d'expériences sur cette solution et je voulais essayer quelquechose de nouveau pour moi.
+j'ai utilisé dès le début git et un repo github, c'est, je trouve une des choses les plus importante à maîtriser dans le quotidien d'un développeur.
+
+## Le quiz et la gamification
+
+
 
 ## Le dictionnaire
 
