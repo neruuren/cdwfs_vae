@@ -39,7 +39,7 @@ Initialement, je voulais juste informatiser le jeu avec les petits papiers, uniq
 ## Les choix techniques de départ
 
 Avant de me lancer sur Lexikos, j'ai voulu rajouter des cordes à mon arc. je me suis formé sur Express, ainsi que sur REACT.js. ça faisait longtemps que je voulais acquérir ces compétences
-J'ai ensuite créé un template 'hello world' de projet. Il s'agit d'un monorepo avec un front REACT et une API Express/Node.js. L'architecture client/serveur est donc découplée. Je suis parti de ça pour initialiser le projet.
+J'ai ensuite créé un template 'hello world' de projet. Il s'agit d'un monorepo avec un front REACT et une API REST Express/Node.js. L'architecture client/serveur est donc découplée. Je suis parti de ça pour initialiser le projet.
 outillage posé dès le départ : ESLint, Prettier, Husky, Jest
 Concernant la bdd, j'ai utilisé mongodb. Je n'avais pas encore d'expériences sur cette solution et je voulais essayer quelquechose de nouveau pour moi.
 j'ai utilisé dès le début git et un repo github, c'est, je trouve une des choses les plus importante à maîtriser dans le quotidien d'un développeur.
@@ -70,17 +70,48 @@ J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue �
 avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à des variations (conjugaisons, divers formes grammaticales), ainsi qu'à des traductions. Le dictionnaire installé est donc très complet.
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
 
+## l'architecture
+
+L'API REST Express est découpée en routes, controllers, services, modèles. 
+les routes définissent tout les endpoints de l'API, elles permettent de lier une URL à un controlleur. Elle indique aussi quels contrôles passer avant le controlleur : être connecté, ne pas dépasser le nombre de requètes autorisées.
+Les controlleurs coordonnent. un controlleur lit la requète http, appelle les bons services, puis renvoie une réponse en json.
+C'est dans les services que sont écrites les règles métiers (calculs, décisions). Par exemple, la fonction answerService.js dont le rôle est de vérifer si une réponse de quiz est correcte.
+Les modèles décrivent les collections de MongoDB, c'est aussi là que sont écrites les fonctions d'interraction avec la base de données (lecture, écriture).
+
+
+
 ## l'authentification
 
-fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie de 15 min, le token est inséré dans les requetes qui parcours les routes qui sont protégées.
-un autre token est généré qui lui à une durée de vie de 30 jours. Ce 2 eme token est un cookie http. quand le token de 15 min est expiré, le 2eme token de 30 jours est contrôlé pour regénérer le token de 15min, en même temps que celui de 30jours. Ainsi, un user peux ne jamais se faire déloguer s'il utilise l'appli régulièrment. Par contre, un utilisateur banni se verra sa possibilité de renouvellement de cookie suspendue.
-Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire.
+fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie de 15 min, le token est inséré dans les requetes qui parcourent les routes qui sont protégées par un middleware d'authentification.
+un autre token est généré qui lui à une durée de vie de 30 jours. Ce 2 eme token est un cookie http. quand le token de 15 min est expiré, le 2eme token de 30 jours est contrôlé pour regénérer le token de 15min, en même temps que celui de 30jours. Ainsi, un user peux ne jamais se faire déloguer s'il utilise l'appli régulièrment. Alors qu'un utilisateur banni se verra sa possibilité de renouvellement de cookie suspendue.
+Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire. Cela à été une surprise pour moi de constater, après le retour de plusieurs utilisateurs que la façon de s'authentifier ancestrale, donc avec le couple login/password, qui est considérée comme allant de sois par les gens qui baignent dans l'informatique, ne l'est pas pour d'autres. Mais voila, il ne faut pas hésiter à inover.
+
+## Les quiz.
+
+### activité de mémorisatinon.
+
+Le choix des mots : Le serveur pioche dans le vocabulaire de l'élève et fait passer en priorité les mots à réviser. Les mots déjà maîtrisés ne reviennent que pour un contrôle de temps en temps.
+La correction : le serveur tolère les petites fautes de frappe. une réponse juste fait monter la jauge 'écrit' du mot (de 0 à 10), une réponse fausse la fait baisser.
+
+### activité de prononciation.
+
+Le choix des mots : le serveur pioche dans le vocabulaire de l'élève, en priorité les mots dont la jauge 'oral' est la plus basse. En mode phrase, un LLM génère de courtes phrases contenant le mot, et le serveur vérifie que le mot y figure bien avant de les proposer.
+L'écoute : un modèle de synthèse vocale lit le mot ou la phrase pour donner le modèle à imiter.
+La correction : l'élève s'enregistre, un modèle de transcription convertit l'audio en texte, puis le serveur compare ce texte au mot attendu, avec la même tolérance que pour le quiz. Une prononciation juste fait monter la jauge 'oral' du mot (de 0 à 10).
+Chaque session consomme du Souffle, une réserve d'énergie qui se recharge avec le temps, car les appels aux modèles ont un coût.
 
 
-## Le quiz et la gamification
+## La gamification
 
-les badges octroyés quand un objectif est atteind, les niveaux qui débloquent des fonctionnalités, 
-la monnaie qui permet d'accélérer la progression et d'acheter du cosmétique.
+XP et niveaux : monter de niveau débloque des fonctionnalités.
+Série (streak) : on enchaîne les jours d'activité. Une série cassée peut être rachetée, avec des limites.
+Badges : ils sont attribués selon des seuils (nombre de quiz, mots maîtrisés…).
+Saisons : un classement remis à zéro toutes les 2 semaines.
+
+## L'économie
+
+Les Lexi se gagnent en jouant, avec un plafond par jour. Il est également possible de les acheter avec des Euros. Kos est la monnaie premium, achetée ou obtenue en convertissant des Lexi.
+L'énergie limite seulement les modes oraux (prononciation, conversation), parce qu'ils coûtent des appels à l'IA. L'activité de mémorisation reste gratuit et illimité.
 
 
 
