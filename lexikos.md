@@ -86,7 +86,7 @@ fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un 
 un autre token est généré qui lui à une durée de vie de 30 jours. Ce 2 eme token est un cookie http. quand le token de 15 min est expiré, le 2eme token de 30 jours est contrôlé pour regénérer le token de 15min, en même temps que celui de 30jours. Ainsi, un user peux ne jamais se faire déloguer s'il utilise l'appli régulièrment. Alors qu'un utilisateur banni se verra sa possibilité de renouvellement de cookie suspendue.
 Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire. Cela à été une surprise pour moi de constater, après le retour de plusieurs utilisateurs que la façon de s'authentifier ancestrale, donc avec le couple login/password, qui est considérée comme allant de sois par les gens qui baignent dans l'informatique, ne l'est pas pour d'autres. Mais voila, il ne faut pas hésiter à inover.
 
-## Les quiz.
+## Les quiz
 
 ### activité de mémorisatinon.
 
@@ -111,7 +111,18 @@ Saisons : un classement remis à zéro toutes les 2 semaines.
 ## L'économie
 
 Les Lexi se gagnent en jouant, avec un plafond par jour. Il est également possible de les acheter avec des Euros. Kos est la monnaie premium, achetée ou obtenue en convertissant des Lexi.
-L'énergie limite seulement les modes oraux (prononciation, conversation), parce qu'ils coûtent des appels à l'IA. L'activité de mémorisation reste gratuit et illimité.
+Je ne fait payer ce qui coûte et rien d'autre :
+L'activité de mémorisation est gratuite et illimitée car elle ne coute rien à faire tourner (à part quelques ressources de serveur).
+La prononciation et la conversation consomment de l'énergie, parce que chaque tour appelle un modèle payant.
+Il y a deux réserves d'énergie séparées, le Souffle et la Voix car une conversation coûte environ dix fois plus cher qu'une prononciation.
+les deux réserves d'énergie se renouvellent toutes seules avec le temps, mais il est possible d'accélérer la régénération en dépensant des Kos.
+côté gestion :
+2 moyens de paiements sont implémentés, Stripe et Paypal. les factures PDF numérotées sont générées. Le coût de chaque appel à un modèle est enregistré, pour savoir combien coûte un utilisateur.les prix, plafonds et packs de lexi et de Kos se modifient depuis l'admin, sans redéployer.
+Actuellement, la phase beta est en cours, les achats dans la boutique se font sur des comptes stripe et paypal de test. Lorsque la beta sera terminée, les véritables moyens de paiements seront ouverts et toutes les sommes achetées lors de la beta seront remises à 0 via un job. Les testeurs de la phase beta recevront un badge de pionnier qui leur permettra de générer quelques Lexi / semaine gratuitement en remerciements de leur aide apportée.
+Equilibrer une économie de jeu est difficile. Il faut que gagner soit motivant sans que ça impacte les ventes.
+
+anecdote de comportement d'utilisateur :
+J'avais mis dès le départ le bouton pour les pionniers pour générer des Lexi. il y avait une limite quotidienne d'une certaine somme. Certains utilisateurs allaient dans le jeu pour cliquer sur le bouton pour générer des Lexi. Et après ça, ils ne le dépensaient pas, ils utilisaient juste les fonctionnalités gratuites. Moi, je pensais que les joueurs n'allaient utiliser le bouton de génération que parcequ'ils avaient besoin de faire des achats dans le jeu (plus d'activité de prononciation par exemple), et bien non. Donc ils se sont retrouvé avec des sommes importantes de Lexi non dépensées, ça faussait complétement les statistiques autour de l'économie. En voyant ça, j'ai désactivé la fonctionnalité, ça à entrainé lors arret total de fréquentation. Amusant pour des testeurs.
 
 
 
