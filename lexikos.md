@@ -130,15 +130,16 @@ J'avais mis dès le départ le bouton pour les pionniers pour générer des Lexi
 ## TODO
 
 
-la prononciation : un modèle qui génère des phrases, un modèle qui génère une voix pour dire la phrase, un modèle qui analyse si la prononciation est correcte.  Mise en place d'un cache pour sauvegarder les phrases générées afin de les réutiliser. 
-la conversation
-la mise en place du projet sur un VPS
-la sauvegarde de la base de données sur un hébergeur indépendant
-la boutique
-le système qui permet de générer des listes de mots en partant d'un sujet ou d'un livre libre de droits.
-la page profil
-les pages légales
-l'interface admin!!!!
+la prononciation : un modèle qui génère des phrases, un modèle qui génère une voix pour dire la phrase, un modèle qui analyse si la prononciation est correcte.  
+Mise en place d'un cache pour sauvegarder les phrases générées afin de les réutiliser.  
+la conversation  
+la mise en place du projet sur un VPS  
+la sauvegarde de la base de données sur un hébergeur indépendant  
+la boutique  
+le système qui permet de générer des listes de mots en partant d'un sujet ou d'un livre libre de droits.  
+la page profil  
+les pages légales  
+l'interface admin!!!!  
 
 
 énorme difficulté pour moi : satisfaire les exigences des utilisateurs!!!!
