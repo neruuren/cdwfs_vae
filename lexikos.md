@@ -1,4 +1,32 @@
+# Lexikos en quelques mots
+
+Lexikos est une application web d'apprentissage du vocabulaire, que j'ai conçue et développée seul. L'utilisateur choisit les mots qu'il veut apprendre, par exemple ceux qu'il ne comprend pas devant une série en VO, et l'application les lui fait retenir grâce à des quiz, des exercices de prononciation et de conversation, le tout dans un esprit de jeu. Elle propose quatre langues (français, anglais, espagnol, allemand) et s'appuie sur son propre dictionnaire de 5,3 millions de mots.
+
+Techniquement, c'est un frontend React et une API REST Express/Node.js avec une base MongoDB, déployés sur un VPS. Lexikos est en ligne sur **lexikos.eu**, en phase de bêta avec de vrais utilisateurs.
+
+![Aperçu de Lexikos](images/lexikos_apercu.png)
+*De gauche à droite : découverte de mots, suivi du vocabulaire, quiz, prononciation, conversation.*
+
 # Historique du projet
+
+```mermaid
+timeline
+    title Lexikos, de l'idée à la bêta
+    section Les origines
+        Enfance : Le jeu des petits papiers pour apprendre l'anglais
+        Voyage à l'étranger : Le jeu revient, avec des points à gagner
+        Avant 2018 : Premier POC en PHP / MySQL
+    section Le parcours pro
+        2018-2024 : Accenture, SFCC, Vue.js
+        2024 : Formation Express et React, template monorepo
+    section Lexikos
+        Février 2025 : Premier commit
+        Juin 2025 : Quiz, XP et badges, interface admin
+        Septembre 2025 : Économie Lexi et Kos, Stripe et PayPal
+        Février 2026 : Ouverture de la bêta, PWA
+        Août 2026 : Connexion par code OTP, prononciation, découverte de mots
+        Septembre 2026 : Conversation, saisons
+```
 
 ## L'origine : le jeu des petits papiers
 
