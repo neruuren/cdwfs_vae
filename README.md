@@ -22,3 +22,14 @@ S'il s'agit d'une activité de création, préciser l'évolution de votre travai
 Pour chacun des blocs :
 Quelles sont les connaissances, compétences, aptitudes mobilisées dans les activités décrites ?
 Comment avez-vous acquis ces connaissances, compétences, aptitudes ?
+
+## Livret 2 (PDF)
+
+Les sources du livret 2 sont dans `livret2/`, un fichier .md par partie. L'ordre du PDF suit le préfixe numérique des fichiers (`00_`, `10_`, `20_`…). Le sommaire est généré automatiquement à partir des titres `#` et `##`.
+
+```bash
+npm install      # une seule fois
+npm run livret   # → build/livret2.pdf
+```
+
+La mise en page (A4, marges, pied de page, page de garde) se règle dans `livret2/style.css`. Chrome est détecté automatiquement ; sinon, définir `CHROME_PATH`.

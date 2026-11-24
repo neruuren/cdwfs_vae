@@ -1,0 +1,15 @@
+{
+  "name": "cdwfs-vae",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "livret": "node scripts/build-livret.mjs"
+  },
+  "devDependencies": {
+    "markdown-it": "^15.0.3",
+    "markdown-it-anchor": "^10.1.0",
+    "mermaid": "^12.3.0",
+    "pagedjs": "^0.4.3",
+    "puppeteer-core": "^25.18.1"
+  }
+}
