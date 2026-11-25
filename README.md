@@ -1,35 +1,55 @@
-# cdwfs_vae
+# VAE Concepteur Développeur Web Full Stack
 
-Il s'agit ici de faire un point sur l'ensemble des compétences nécéssaires pour préparer la VAE 'Concepteur Développeur Web Full Stack' RNCP 39608- Niveau 6
+Ce dépôt contient mon dossier de **Validation des Acquis de l'Expérience** pour le titre **Concepteur Développeur Web Full Stack** (RNCP 39608, niveau 6).
 
-pour chaque compétences, il faut indiquer le niveau de maitrise :
-1 = Jamais réalisé ou participation mineure
-2 = Réalisé ponctuellement avec un faible niveau de maîtrise / besoin d’une assistance modérée
-3 = Réalisé avec maîtrise et/ou de façon récurrente seul ou en collaboration
-4 = Réalisé avec aisance, en autonomie totale
+On y trouve surtout les sources du **livret 2**, rédigées en Markdown et assemblées en PDF par un script.
 
-Pour chacune des compétences, décrire les activités professionnelles en les contextualisant, en explicitant les ressources mobilisées et en apportant des preuves.
-Indiquer la place précise occupée au sein des activités.
-Vous pouvez préciser si :
-• vous mobilisez des moyens
-• vous exécutez, produisez
-• vous encadrez
-• vous fixez des objectifs opérationnels
-• vous définissez des orientations stratégiques
+**➜ [Accéder au livret 2](livret2/)**
 
-S'il s'agit d'une activité de création, préciser l'évolution de votre travail depuis le début de votre activité.
+## Le livret 2
 
-Pour chacun des blocs :
-Quelles sont les connaissances, compétences, aptitudes mobilisées dans les activités décrites ?
-Comment avez-vous acquis ces connaissances, compétences, aptitudes ?
+Le livret 2 décrit mon expérience professionnelle et montre, preuves à l'appui, comment elle couvre les 35 compétences du référentiel, réparties en 4 blocs :
 
-## Livret 2 (PDF)
+1. Front-end : interfaces adaptatives et interactives (C1 à C6)
+2. Back-end : applications, bases de données et API (C7 à C17)
+3. Architecture, cloud et industrialisation du développement (C18 à C25)
+4. Gestion de projet et amélioration continue (C26 à C35)
 
-Les sources du livret 2 sont dans `livret2/`, un fichier .md par partie. L'ordre du PDF suit le préfixe numérique des fichiers (`00_`, `10_`, `20_`…). Le sommaire est généré automatiquement à partir des titres `#` et `##`.
+Il s'appuie sur trois sources d'expérience :
+
+- **Lexikos** ([lexikos.eu](https://lexikos.eu)), l'application d'apprentissage du vocabulaire que j'ai conçue et développée seul : React, API REST Express/Node.js, MongoDB, déployée sur un VPS, en bêta avec de vrais utilisateurs. C'est le fil rouge du livret.
+- **Altima / Accenture** (2018-2024) : projets e-commerce Salesforce Commerce Cloud pour des clients. Ils sont soumis à une clause de confidentialité, donc pas de code ni de captures.
+- **Autres projets** pour les compétences que Lexikos ne couvre pas.
+
+### Plan
+
+| Fichier | Partie |
+|---|---|
+| [00_page_de_garde.md](livret2/00_page_de_garde.md) | Page de garde |
+| [01_sommaire.md](livret2/01_sommaire.md) | Sommaire (généré automatiquement) |
+| [10_introduction.md](livret2/10_introduction.md) | Introduction : parcours et organisation du livret |
+| [20_lexikos.md](livret2/20_lexikos.md) | Lexikos : historique, fonctionnalités, backend, frontend |
+| [30_accenture.md](livret2/30_accenture.md) | Altima / Accenture : projets e-commerce SFCC |
+| [40_autres_projets.md](livret2/40_autres_projets.md) | Autres projets |
+| [50_competences.md](livret2/50_competences.md) | Correspondance entre les 35 compétences et les parties du livret |
+| [90_sources.md](livret2/90_sources.md) | Sources |
+
+Les images sont dans [livret2/images/](livret2/images/) et la mise en page dans [livret2/style.css](livret2/style.css).
+
+### Générer le PDF
 
 ```bash
 npm install      # une seule fois
 npm run livret   # → build/livret2.pdf
 ```
 
-La mise en page (A4, marges, pied de page, page de garde) se règle dans `livret2/style.css`. Chrome est détecté automatiquement ; sinon, définir `CHROME_PATH`.
+Le script [scripts/build-livret.mjs](scripts/build-livret.mjs) :
+
+- assemble les fichiers `.md` de `livret2/` dans l'ordre de leur préfixe numérique (`00_`, `10_`, `20_`…) ;
+- génère le sommaire à partir des titres `#` et `##` ;
+- convertit les blocs ` ```mermaid ` en diagrammes (frise chronologique, schéma d'architecture) ;
+- pagine le document avec Paged.js et l'imprime en PDF avec Chrome.
+
+Chrome est détecté automatiquement. Sinon, définir la variable `CHROME_PATH`.
+
+Pour ajouter une partie, il suffit de créer un fichier `.md` dans `livret2/` avec le bon préfixe.
