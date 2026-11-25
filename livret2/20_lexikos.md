@@ -230,12 +230,78 @@ wiktionnary m'a permis d'importer lemmes, variantes, partOfSpeech, catégories. 
 
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
 
-## l'authentification
+## L'authentification
 
-fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie de 15 min, le token est inséré dans les requetes qui parcourent les routes qui sont protégées par un middleware d'authentification.
-un autre token est généré qui lui à une durée de vie de 30 jours. Ce 2 eme token est un cookie http. quand le token de 15 min est expiré, le 2eme token de 30 jours est contrôlé pour regénérer le token de 15min, en même temps que celui de 30jours. Ainsi, un user peux ne jamais se faire déloguer s'il utilise l'appli régulièrment. Alors qu'un utilisateur banni se verra sa possibilité de renouvellement de cookie suspendue.  
+L'authentification repose sur deux mécanismes : un code à usage unique (OTP) envoyé par e-mail pour se connecter, puis des jetons JWT pour rester connecté.
 
-<!-- à rédiger : génération et vérification du code OTP, envoi de l'e-mail -->
+### La connexion par code OTP
+
+Un nouvel utilisateur et un utilisateur déjà inscrit utilisent le même formulaire de connexion. Ils saisissent leur adresse e-mail, un code OTP à 4 chiffres est généré et leur est envoyé par e-mail. L'utilisateur a alors 10 minutes pour saisir ce code dans la deuxième partie du formulaire, avec 5 essais au maximum. Si le code est bon, l'utilisateur est connecté.  
+Cette façon de faire permet de se passer de mot de passe, et elle permet aussi de vérifier que l'adresse e-mail est correcte : recevoir le code prouve que l'adresse existe et appartient bien à l'utilisateur.  
+Un nouvel utilisateur qui ne saisit pas le code dans le temps imparti voit son compte supprimé automatiquement, grâce à un index TTL de MongoDB qui efface le document à l'expiration du code.
+
+### Les jetons JWT
+
+Une fois le code validé, l'API génère deux jetons :
+
+- un jeton d'accès JWT, d'une durée de vie de 15 minutes. Le frontend l'ajoute à chaque requête envoyée vers une route protégée, et le middleware d'authentification `protect` le vérifie ;
+- un jeton de renouvellement (refresh token), d'une durée de vie de 30 jours, stocké dans un cookie HttpOnly, donc inaccessible au JavaScript de la page.
+
+```mermaid
+%%{init: {"sequence": {"mirrorActors": false, "messageMargin": 14, "boxMargin": 4, "noteMargin": 4, "actorMargin": 40, "height": 36}}}%%
+sequenceDiagram
+    autonumber
+    participant F as Frontend React
+    participant A as API Express
+    participant DB as MongoDB
+    participant M as Serveur e-mail
+
+    F->>A: POST /api/auth/otp/request (e-mail)
+    A->>DB: code à 4 chiffres, valable 10 min
+    A->>M: envoi du code par e-mail
+    F->>A: POST /api/auth/otp/verify (e-mail + code)
+    A->>DB: code correct ? (5 essais maximum)
+    A-->>F: jeton d'accès JWT (15 min)<br/>+ cookie HttpOnly refreshToken (30 jours)
+```
+*La connexion : le code reçu par e-mail est échangé contre les deux jetons.*
+
+### Le renouvellement et le bannissement
+
+Quand le jeton de 15 minutes a expiré, l'API répond par une erreur 401. Le frontend appelle alors la route de renouvellement : le cookie de 30 jours est contrôlé, et s'il est valide, un nouveau jeton de 15 minutes est généré. La requête initiale est ensuite rejouée, sans que l'utilisateur s'en aperçoive.  
+Le cookie de 30 jours, lui, n'est pas renouvelé : il garde sa date d'expiration d'origine. L'utilisateur reste donc connecté sans rien faire pendant 30 jours, puis doit se reconnecter avec un nouveau code.  
+Un utilisateur banni voit ses jetons de renouvellement révoqués et ne peut plus obtenir de nouveau jeton d'accès : il est renvoyé à l'écran de connexion.
+
+```mermaid
+%%{init: {"sequence": {"mirrorActors": false, "messageMargin": 14, "boxMargin": 4, "noteMargin": 4, "actorMargin": 40, "height": 36}}}%%
+sequenceDiagram
+    autonumber
+    participant F as Frontend React
+    participant A as API Express
+    participant DB as MongoDB
+
+    rect rgba(120, 90, 160, 0.06)
+    Note over F,DB: Requête protégée
+    F->>A: GET /api/quiz/words<br/>Authorization: Bearer <jeton>
+    A->>A: middleware protect : jeton valide ?
+    A-->>F: 200 + données JSON
+    end
+
+    rect rgba(120, 90, 160, 0.06)
+    Note over F,DB: Jeton expiré : renouvellement silencieux
+    F->>A: requête avec un jeton expiré
+    A-->>F: 401
+    F->>A: POST /api/auth/refresh (cookie envoyé automatiquement)
+    A->>DB: refreshToken valide ? utilisateur banni ?
+    alt cookie valide
+        A-->>F: nouveau jeton d'accès (15 min)
+        F->>A: la requête initiale est rejouée
+    else banni ou cookie expiré
+        A->>DB: révocation des refreshToken
+        A-->>F: 401 / 403 : retour à l'écran de connexion
+    end
+    end
+```
+*Une requête protégée, puis le renouvellement du jeton d'accès quand il a expiré.*
 
 ## Les activités côté serveur
 
