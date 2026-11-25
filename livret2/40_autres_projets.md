@@ -1,9 +1,6 @@
 # Autres projets
 
-<!-- à rédiger : les compétences que Lexikos ne couvre pas sont à prouver ici -->
+<!-- à rédiger : les compétences que Lexikos ne couvre pas -->
 
-## Wanderline
 
-## CV en ligne
-
-## A M F : application intranet PHP / MySQL
+## CV en ligne ?

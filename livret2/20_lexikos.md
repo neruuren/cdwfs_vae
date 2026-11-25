@@ -72,7 +72,144 @@ outillage posé dès le départ : ESLint, Prettier, Husky, Jest
 Concernant la bdd, j'ai utilisé mongodb. Je n'avais pas encore d'expériences sur cette solution et je voulais essayer quelquechose de nouveau pour moi.  
 j'ai utilisé dès le début git et un repo github, c'est, je trouve une des choses les plus importante à maîtriser dans le quotidien d'un développeur.
 
+# Les fonctionnalités
+
+## Le dictionnaire : l'utilisateur choisit ses mots
+
+### Quatre langues dès le départ
+
+J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue étrangère. je voulais que dès le départ ma solution propose plusieurs langues. Mais je ne voulais en proposer trop d'un coup pour ne pas me surcharger. Je me suis dis que 4 langues suffiraient au départ. quitte à en rajouter plus tard. Les 4 langues de base sont le Français, l'Anglais, l'Espagnol, l'Allemand. L'idée c'est que ce soit utilisable dans n'importe quelle combinaison. Par exempe, un Allemand peut y apprendre l'Espagnol. L'interface est écrite dans la langue maternelle de l'utilisateur (la landing page s'affiche dans la langue du navigateur avec un fallback sur l'anglais, puis le user sélectionne sa langue maternelle lors de la création de son compte).  
+avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à des variations (conjugaisons, divers formes grammaticales), ainsi qu'à des traductions. Le dictionnaire installé est donc très complet.  
+
+<!-- capture à fournir : recherche d'un mot dans le dictionnaire et ajout à son vocabulaire -->
+![Ajout d'un mot au vocabulaire](images/lexikos_ajout_mot.png)
+*Recherche d'un mot dans le dictionnaire et ajout à son vocabulaire.*
+
+<!-- à rédiger : ajouter un mot à son vocabulaire -->
+<!-- à rédiger : le système qui permet de générer des listes de mots en partant d'un sujet ou d'un livre libre de droits -->
+
+## Se connecter sans mot de passe
+
+Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire. Cela à été une surprise pour moi de constater, après le retour de plusieurs utilisateurs que la façon de s'authentifier ancestrale, donc avec le couple login/password, qui est considérée comme allant de sois par les gens qui baignent dans l'informatique, ne l'est pas pour d'autres. Mais voila, il ne faut pas hésiter à inover.
+
+<!-- capture à fournir : écran de saisie du code OTP (avec le mail reçu si possible) -->
+![Connexion par code OTP](images/lexikos_connexion_otp.png)
+*Connexion sans mot de passe : le code reçu par e-mail.*
+
+## Les activités
+
+### activité de mémorisatinon.
+
+Le choix des mots : les mots à réviser passent en priorité. Les mots déjà maîtrisés ne reviennent que pour un contrôle de temps en temps.  
+La correction : les petites fautes de frappe sont tolérées. une réponse juste fait monter la jauge 'écrit' du mot (de 0 à 10), une réponse fausse la fait baisser.
+
+<!-- capture à fournir : une question de quiz avec sa correction -->
+![Activité de mémorisation](images/lexikos_quiz.png)
+*Une question du quiz de mémorisation et sa correction.*
+
+### activité de prononciation.
+
+Le choix des mots : en priorité les mots dont la jauge 'oral' est la plus basse. En mode phrase, de courtes phrases contenant le mot sont proposées.  
+L'écoute : une voix lit le mot ou la phrase pour donner le modèle à imiter.  
+La correction : l'élève s'enregistre, et sa prononciation est comparée au mot attendu, avec la même tolérance que pour le quiz. Une prononciation juste fait monter la jauge 'oral' du mot (de 0 à 10).  
+Chaque session consomme du Souffle, une réserve d'énergie qui se recharge avec le temps, car les appels aux modèles ont un coût.
+
+<!-- capture à fournir : enregistrement de la prononciation et résultat, jauge 'oral' -->
+![Activité de prononciation](images/lexikos_prononciation.png)
+*L'élève s'enregistre, sa prononciation est comparée au mot attendu.*
+
+### activité de conversation.
+
+<!-- à rédiger : la conversation -->
+
+<!-- capture à fournir : un échange de conversation en cours -->
+![Activité de conversation](images/lexikos_conversation.png)
+*Un échange en cours dans l'activité de conversation.*
+
+## La gamification
+
+XP et niveaux : monter de niveau débloque des fonctionnalités.  
+Série (streak) : on enchaîne les jours d'activité. Une série cassée peut être rachetée, avec des limites.  
+Badges : ils sont attribués selon des seuils (nombre de quiz, mots maîtrisés…).
+Saisons : un classement remis à zéro toutes les 2 semaines.
+
+<!-- capture à fournir : profil avec XP/niveau, série, badges, classement de saison -->
+![Gamification](images/lexikos_gamification.png)
+*Niveau, série, badges et classement de la saison.*
+
+## L'économie
+
+Les Lexi se gagnent en jouant, avec un plafond par jour. Il est également possible de les acheter avec des Euros. Kos est la monnaie premium, achetée ou obtenue en convertissant des Lexi.  
+
+Je ne fait payer ce qui coûte et rien d'autre :  
+L'activité de mémorisation est gratuite et illimitée car elle ne coute rien à faire tourner (à part quelques ressources de serveur).  
+La prononciation et la conversation consomment de l'énergie, parce que chaque tour appelle un modèle payant.  
+Il y a deux réserves d'énergie séparées, le Souffle et la Voix car une conversation coûte environ dix fois plus cher qu'une prononciation.  
+les deux réserves d'énergie se renouvellent toutes seules avec le temps, mais il est possible d'accélérer la régénération en dépensant des Kos.  
+
+<!-- à rédiger : la boutique -->
+
+<!-- capture à fournir : boutique Lexi/Kos et réserves d'énergie Souffle/Voix -->
+![La boutique](images/lexikos_boutique.png)
+*La boutique : packs de Lexi et de Kos, réserves de Souffle et de Voix.*
+
+Actuellement, la phase beta est en cours, les achats dans la boutique se font sur des comptes stripe et paypal de test. Lorsque la beta sera terminée, les véritables moyens de paiements seront ouverts et toutes les sommes achetées lors de la beta seront remises à 0 via un job. Les testeurs de la phase beta recevront un badge de pionnier qui leur permettra de générer quelques Lexi / semaine gratuitement en remerciements de leur aide apportée.  
+Equilibrer une économie de jeu est difficile. Il faut que gagner soit motivant sans que ça impacte les ventes.  
+
+anecdote de comportement d'utilisateur :  
+J'avais mis dès le départ le bouton pour les pionniers pour générer des Lexi. il y avait une limite quotidienne d'une certaine somme. Certains utilisateurs allaient dans le jeu pour cliquer sur le bouton pour générer des Lexi. Et après ça, ils ne le dépensaient pas, ils utilisaient juste les fonctionnalités gratuites. Moi, je pensais que les joueurs n'allaient utiliser le bouton de génération que parcequ'ils avaient besoin de faire des achats dans le jeu (plus d'activité de prononciation par exemple), et bien non. Donc ils se sont retrouvé avec des sommes importantes de Lexi non dépensées, ça faussait complétement les statistiques autour de l'économie. En voyant ça, j'ai désactivé la fonctionnalité, ça à entrainé lors arret total de fréquentation. Amusant pour des testeurs.
+
 # Le backend
+
+## l'architecture
+
+L'API REST Express est découpée en routes, controllers, services, modèles.  
+Les routes définissent tous les endpoints de l'API, elles permettent de lier une URL à un controller. Elles indiquent aussi quels contrôles passer avant le controller (les middlewares) : être connecté, ne pas dépasser le nombre de requêtes autorisées.  
+Les controllers coordonnent. Un controller lit la requête HTTP, appelle les bons services, puis renvoie une réponse en JSON.  
+C'est dans les services que sont écrites les règles métier (calculs, décisions). Par exemple, le service answerService.js, dont le rôle est de vérifier si une réponse de quiz est correcte.  
+Les modèles décrivent les collections de MongoDB, c'est aussi là que sont écrites les fonctions d'interaction avec la base de données (lecture, écriture).
+
+```mermaid
+%%{init: {"flowchart": {"rankSpacing": 30, "nodeSpacing": 15, "padding": 6}}}%%
+flowchart LR
+    client(["Frontend<br/>React"])
+
+    subgraph routes ["Route"]
+        r["POST<br/>/api/quiz/submit"]
+    end
+
+    subgraph mw ["Middlewares"]
+        auth["protect<br/>(JWT)<br/>rateLimiter<br/>(quota)"]
+    end
+
+    subgraph ctrl ["Controller"]
+        c["submitQuiz<br/>Answers"]
+    end
+
+    subgraph svc ["Services"]
+        s1["answerService<br/>correction"]
+        s2["masteryService<br/>jauges"]
+        s3["gamification<br/>Service<br/>XP, badges"]
+    end
+
+    subgraph mdl ["Modèles Mongoose"]
+        m1["QuizResult"]
+        m2["User"]
+        m3["LemmaWord"]
+    end
+
+    db[("MongoDB")]
+
+    client -- "requête HTTP" --> r
+    r --> auth --> c
+    c --> s1 & s2 & s3
+    s1 --> m1
+    s2 --> m3
+    s3 --> m2
+    m1 & m2 & m3 --> db
+    c -. "réponse JSON" .-> client
+```
+*Le trajet d'une requête dans l'API, avec l'exemple de la soumission d'un quiz.*
 
 ## Le dictionnaire
 
@@ -91,85 +228,50 @@ Tout cela m'a permis de comprendre que j'avais besoin pour chaque mot saisi par 
 A force de tester divers solutions, c'est devenu clair qu'il fallait que mon appli utilise son propre dictionnaire, présent dans la bdd, donc, requétable très rapidement. J'ai recherché les solutions openSource et ait trouvé la solution wiktionnary (licence CC BY-SA 4.0). J'ai créé un script d'importation qui télécharge les dumps dans les langues souhaitées, les parcourt entièrement et en extrait uniquement les données souhaitées pour les besoins du projet.
 wiktionnary m'a permis d'importer lemmes, variantes, partOfSpeech, catégories. Le script est optimisé pendant des semaines (points de reprise, journaux, insertions par lots).
 
-### Quatre langues dès le départ
-
-J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue étrangère. je voulais que dès le départ ma solution propose plusieurs langues. Mais je ne voulais en proposer trop d'un coup pour ne pas me surcharger. Je me suis dis que 4 langues suffiraient au départ. quitte à en rajouter plus tard. Les 4 langues de base sont le Français, l'Anglais, l'Espagnol, l'Allemand. L'idée c'est que ce soit utilisable dans n'importe quelle combinaison. Par exempe, un Allemand peut y apprendre l'Espagnol. L'interface est écrite dans la langue maternelle de l'utilisateur (la landing page s'affiche dans la langue du navigateur avec un fallback sur l'anglais, puis le user sélectionne sa langue maternelle lors de la création de son compte).  
-avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à des variations (conjugaisons, divers formes grammaticales), ainsi qu'à des traductions. Le dictionnaire installé est donc très complet.  
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
-
-## l'architecture
-
-L'API REST Express est découpée en routes, controllers, services, modèles. 
-les routes définissent tout les endpoints de l'API, elles permettent de lier une URL à un controlleur. Elle indique aussi quels contrôles passer avant le controlleur : être connecté, ne pas dépasser le nombre de requètes autorisées.
-Les controlleurs coordonnent. un controlleur lit la requète http, appelle les bons services, puis renvoie une réponse en json.  
-C'est dans les services que sont écrites les règles métiers (calculs, décisions). Par exemple, la fonction answerService.js dont le rôle est de vérifer si une réponse de quiz est correcte.  
-Les modèles décrivent les collections de MongoDB, c'est aussi là que sont écrites les fonctions d'interraction avec la base de données (lecture, écriture).
 
 ## l'authentification
 
 fonctionne avec des jetons JWT. un utilisateur authentifié se voit octroyé un token avec une durée de vie de 15 min, le token est inséré dans les requetes qui parcourent les routes qui sont protégées par un middleware d'authentification.
 un autre token est généré qui lui à une durée de vie de 30 jours. Ce 2 eme token est un cookie http. quand le token de 15 min est expiré, le 2eme token de 30 jours est contrôlé pour regénérer le token de 15min, en même temps que celui de 30jours. Ainsi, un user peux ne jamais se faire déloguer s'il utilise l'appli régulièrment. Alors qu'un utilisateur banni se verra sa possibilité de renouvellement de cookie suspendue.  
-Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire. Cela à été une surprise pour moi de constater, après le retour de plusieurs utilisateurs que la façon de s'authentifier ancestrale, donc avec le couple login/password, qui est considérée comme allant de sois par les gens qui baignent dans l'informatique, ne l'est pas pour d'autres. Mais voila, il ne faut pas hésiter à inover.
 
-## Les quiz
+<!-- à rédiger : génération et vérification du code OTP, envoi de l'e-mail -->
 
-### activité de mémorisatinon.
+## Les activités côté serveur
 
-Le choix des mots : Le serveur pioche dans le vocabulaire de l'élève et fait passer en priorité les mots à réviser. Les mots déjà maîtrisés ne reviennent que pour un contrôle de temps en temps.  
-La correction : le serveur tolère les petites fautes de frappe. une réponse juste fait monter la jauge 'écrit' du mot (de 0 à 10), une réponse fausse la fait baisser.
+### mémorisation
 
-### activité de prononciation.
+Le serveur pioche dans le vocabulaire de l'élève et fait passer en priorité les mots à réviser. Le serveur tolère les petites fautes de frappe.
 
-Le choix des mots : le serveur pioche dans le vocabulaire de l'élève, en priorité les mots dont la jauge 'oral' est la plus basse. En mode phrase, un LLM génère de courtes phrases contenant le mot, et le serveur vérifie que le mot y figure bien avant de les proposer.  
-L'écoute : un modèle de synthèse vocale lit le mot ou la phrase pour donner le modèle à imiter.  
-La correction : l'élève s'enregistre, un modèle de transcription convertit l'audio en texte, puis le serveur compare ce texte au mot attendu, avec la même tolérance que pour le quiz. Une prononciation juste fait monter la jauge 'oral' du mot (de 0 à 10).  
-Chaque session consomme du Souffle, une réserve d'énergie qui se recharge avec le temps, car les appels aux modèles ont un coût.
+<!-- à rédiger : comment les mots à réviser sont choisis, comment la tolérance aux fautes de frappe est calculée -->
 
-## La gamification
+### prononciation
 
-XP et niveaux : monter de niveau débloque des fonctionnalités.  
-Série (streak) : on enchaîne les jours d'activité. Une série cassée peut être rachetée, avec des limites.  
-Badges : ils sont attribués selon des seuils (nombre de quiz, mots maîtrisés…).
-Saisons : un classement remis à zéro toutes les 2 semaines.
+Le serveur pioche dans le vocabulaire de l'élève, en priorité les mots dont la jauge 'oral' est la plus basse. En mode phrase, un LLM génère de courtes phrases contenant le mot, et le serveur vérifie que le mot y figure bien avant de les proposer.  
+Un modèle de synthèse vocale lit le mot ou la phrase.  
+Un modèle de transcription convertit l'audio de l'élève en texte, puis le serveur compare ce texte au mot attendu.
 
-## L'économie
+<!-- à rédiger : la prononciation : un modèle qui génère des phrases, un modèle qui génère une voix pour dire la phrase, un modèle qui analyse si la prononciation est correcte -->
+<!-- à rédiger : mise en place d'un cache pour sauvegarder les phrases générées afin de les réutiliser -->
 
-Les Lexi se gagnent en jouant, avec un plafond par jour. Il est également possible de les acheter avec des Euros. Kos est la monnaie premium, achetée ou obtenue en convertissant des Lexi.  
+### conversation
 
-Je ne fait payer ce qui coûte et rien d'autre :  
-L'activité de mémorisation est gratuite et illimitée car elle ne coute rien à faire tourner (à part quelques ressources de serveur).  
-La prononciation et la conversation consomment de l'énergie, parce que chaque tour appelle un modèle payant.  
-Il y a deux réserves d'énergie séparées, le Souffle et la Voix car une conversation coûte environ dix fois plus cher qu'une prononciation.  
-les deux réserves d'énergie se renouvellent toutes seules avec le temps, mais il est possible d'accélérer la régénération en dépensant des Kos.  
+<!-- à rédiger : la conversation côté serveur -->
 
-côté gestion :  
+## Paiements et suivi des coûts
+
 2 moyens de paiements sont implémentés, Stripe et Paypal. les factures PDF numérotées sont générées. Le coût de chaque appel à un modèle est enregistré, pour savoir combien coûte un utilisateur.les prix, plafonds et packs de lexi et de Kos se modifient depuis l'admin, sans redéployer.  
-Actuellement, la phase beta est en cours, les achats dans la boutique se font sur des comptes stripe et paypal de test. Lorsque la beta sera terminée, les véritables moyens de paiements seront ouverts et toutes les sommes achetées lors de la beta seront remises à 0 via un job. Les testeurs de la phase beta recevront un badge de pionnier qui leur permettra de générer quelques Lexi / semaine gratuitement en remerciements de leur aide apportée.  
-Equilibrer une économie de jeu est difficile. Il faut que gagner soit motivant sans que ça impacte les ventes.  
 
-anecdote de comportement d'utilisateur :  
-J'avais mis dès le départ le bouton pour les pionniers pour générer des Lexi. il y avait une limite quotidienne d'une certaine somme. Certains utilisateurs allaient dans le jeu pour cliquer sur le bouton pour générer des Lexi. Et après ça, ils ne le dépensaient pas, ils utilisaient juste les fonctionnalités gratuites. Moi, je pensais que les joueurs n'allaient utiliser le bouton de génération que parcequ'ils avaient besoin de faire des achats dans le jeu (plus d'activité de prononciation par exemple), et bien non. Donc ils se sont retrouvé avec des sommes importantes de Lexi non dépensées, ça faussait complétement les statistiques autour de l'économie. En voyant ça, j'ai désactivé la fonctionnalité, ça à entrainé lors arret total de fréquentation. Amusant pour des testeurs.
+## Hébergement et exploitation
 
+<!-- à rédiger : la mise en place du projet sur un VPS -->
+<!-- à rédiger : ci/cd -->
+<!-- à rédiger : la sauvegarde de la base de données sur un hébergeur indépendant -->
+<!-- à rédiger : l'interface admin!!!! -->
 
+# Le frontend
 
-
-## TODO
-
-
-la prononciation : un modèle qui génère des phrases, un modèle qui génère une voix pour dire la phrase, un modèle qui analyse si la prononciation est correcte.  
-Mise en place d'un cache pour sauvegarder les phrases générées afin de les réutiliser.  
-la conversation  
-la mise en place du projet sur un VPS  
-ci/cd  
-la sauvegarde de la base de données sur un hébergeur indépendant  
-la boutique  
-le système qui permet de générer des listes de mots en partant d'un sujet ou d'un livre libre de droits.  
-la page profil  
-les pages légales  
-l'interface admin!!!!  
-expliquer le frontend  
-
-
-
-énorme difficulté pour moi : satisfaire les exigences des utilisateurs!!!!
+<!-- à rédiger : expliquer le frontend, en s'appuyant sur ../historique_frontend.md (React/Vite, refonte Lumen, i18n, PWA, SEO, responsive) -->
+<!-- à rédiger : la page profil -->
+<!-- à rédiger : les pages légales -->
 
