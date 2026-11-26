@@ -7,6 +7,11 @@ export const COMPETENCES_FILE = '50_competences.md';
 // (« competences », « compétence » ou « comp » sont aussi acceptés).
 const TAG_RE = /<!--\s*comp(?:[ée]tences?)?\s*:([\s\S]*?)-->/gi;
 
+// Commentaires de travail : <!-- à rédiger : … -->, <!-- à compléter : … -->, <!-- capture à fournir : … -->…
+// Groupe 1 : le type (« à rédiger »), groupe 2 : la description.
+export const TODO_RE =
+	/<!--\s*((?:à|a) (?:rédiger|rediger|compléter|completer|faire|vérifier|verifier|décider|decider)|capture à fournir|todo)\s*:?\s*([\s\S]*?)-->/gi;
+
 export const competenceTags = (text) => {
 	const codes = [];
 	for (const m of text.matchAll(TAG_RE)) {

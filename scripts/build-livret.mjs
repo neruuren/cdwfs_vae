@@ -8,7 +8,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import MarkdownIt from 'markdown-it';
 import anchor from 'markdown-it-anchor';
 import puppeteer from 'puppeteer-core';
-import { COMPETENCES_FILE, competenceTags } from './livret-lib.mjs';
+import { COMPETENCES_FILE, TODO_RE, competenceTags } from './livret-lib.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const srcDir = path.join(root, 'livret2');
@@ -16,6 +16,8 @@ const outDir = path.join(root, 'build');
 const nodeModules = path.join(root, 'node_modules');
 const fileUrl = (p) => pathToFileURL(p).href;
 const watchMode = process.argv.includes('--watch');
+// Par défaut, les commentaires « à rédiger » apparaissent dans le PDF. --final les masque.
+const finalMode = process.argv.includes('--final');
 
 // --- Markdown → HTML -------------------------------------------------------
 const createRenderer = () => {
@@ -53,6 +55,22 @@ const createRenderer = () => {
 		}
 		return defaultFence(tokens, idx, options, env, self);
 	};
+
+	// Commentaires de travail → encadré visible dans le PDF (sauf en mode final).
+	const showTodos = (html, tag) =>
+		finalMode
+			? html
+			: html.replace(
+					TODO_RE,
+					(_, kind, what) =>
+						`<${tag} class="todo"><span class="todo-kind">${md.utils.escapeHtml(kind)}</span>${what.trim() ? ' ' + md.utils.escapeHtml(what.trim()) : ''}</${tag}>`,
+				);
+	const defaultHtmlBlock = md.renderer.rules.html_block;
+	const defaultHtmlInline = md.renderer.rules.html_inline;
+	md.renderer.rules.html_block = (tokens, idx, ...rest) =>
+		showTodos(defaultHtmlBlock(tokens, idx, ...rest), 'div');
+	md.renderer.rules.html_inline = (tokens, idx, ...rest) =>
+		showTodos(defaultHtmlInline(tokens, idx, ...rest), 'span');
 
 	return { md, toc };
 };

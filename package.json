@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "livret": "node scripts/build-livret.mjs",
-    "livret:watch": "node scripts/build-livret.mjs --watch",
+    "livret:final": "node scripts/build-livret.mjs --final",
+    "livret:watch":"node scripts/build-livret.mjs --watch",
     "livret:todo": "node scripts/livret-todo.mjs"
   },
   "devDependencies": {

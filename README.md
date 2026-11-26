@@ -40,7 +40,8 @@ Les images sont dans [livret2/images/](livret2/images/) et la mise en page dans 
 
 ```bash
 npm install            # une seule fois
-npm run livret         # → build/livret2.pdf
+npm run livret         # → build/livret2.pdf, avec les « à rédiger » visibles
+npm run livret:final   # → build/livret2.pdf, version à rendre, sans les « à rédiger »
 npm run livret:watch   # regénère le PDF à chaque modification dans livret2/
 npm run livret:todo    # état d'avancement : ce qui reste à rédiger
 ```

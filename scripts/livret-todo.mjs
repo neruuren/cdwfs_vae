@@ -4,11 +4,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { COMPETENCES_FILE, competenceTags } from './livret-lib.mjs';
+import { COMPETENCES_FILE, TODO_RE, competenceTags } from './livret-lib.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const srcDir = path.join(root, 'livret2');
-const TODO_RE = /<!--\s*((?:à|a) (?:rédiger|rediger|compléter|completer|faire|vérifier|verifier)|capture à fournir|todo)\s*:?\s*([\s\S]*?)-->/gi;
 
 const files = fs
 	.readdirSync(srcDir)

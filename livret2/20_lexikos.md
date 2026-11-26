@@ -64,6 +64,8 @@ il y a eu plein de phases, d'évolutions, de mise à jour majeures, de nouvelles
 Quand j'ai commencé, il y a eu une intense réflexion sur le projet.  
 Initialement, je voulais juste informatiser le jeu avec les petits papiers, uniquement pour mon usage personnel. Puis, très vite je me suis dit que cela pourrait intéresser éventuellement d'autres personnes. ça impliquait mettre en place une interface, des regles, une persistance de data. J'ai donc commencé à réfléchir à la conception.
 
+<!-- à rédiger : faisabilité : temps, coûts, risques (C27) -->
+
 ## Les choix techniques de départ
 
 Avant de me lancer sur Lexikos, j'ai voulu rajouter des cordes à mon arc. je me suis formé sur Express, ainsi que sur REACT.js. ça faisait longtemps que je voulais acquérir ces compétences.  
@@ -71,6 +73,8 @@ J'ai ensuite créé un template 'hello world' de projet. Il s'agit d'un monorepo
 outillage posé dès le départ : ESLint, Prettier, Husky, Jest
 Concernant la bdd, j'ai utilisé mongodb. Je n'avais pas encore d'expériences sur cette solution et je voulais essayer quelquechose de nouveau pour moi.  
 j'ai utilisé dès le début git et un repo github, c'est, je trouve une des choses les plus importante à maîtriser dans le quotidien d'un développeur.
+
+<!-- à rédiger : pourquoi mongo plutôt que du SQL (C12) -->
 
 # Les fonctionnalités
 
@@ -89,8 +93,11 @@ avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à
 <!-- à rédiger : le système qui permet de générer des listes de mots en partant d'un sujet ou d'un livre libre de droits -->
 
 ## Se connecter sans mot de passe
+<!-- compétences : C26 -->
 
 Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse mail à chaque fois qu'un user souhaite se connecter. J'ai mis ça en place après avoir parlé à des utilisateurs que ça rebute totalement de devoir mémoriser un password, et même, c'est une pratique qui est pour certains totalement rédhibitoire. Cela à été une surprise pour moi de constater, après le retour de plusieurs utilisateurs que la façon de s'authentifier ancestrale, donc avec le couple login/password, qui est considérée comme allant de sois par les gens qui baignent dans l'informatique, ne l'est pas pour d'autres. Mais voila, il ne faut pas hésiter à inover.
+
+<!-- à rédiger : combien de users, comment j'ai eu leurs retours (C26) -->
 
 <!-- capture à fournir : écran de saisie du code OTP (avec le mail reçu si possible) -->
 ![Connexion par code OTP](images/lexikos_connexion_otp.png)
@@ -159,6 +166,9 @@ Equilibrer une économie de jeu est difficile. Il faut que gagner soit motivant 
 anecdote de comportement d'utilisateur :  
 J'avais mis dès le départ le bouton pour les pionniers pour générer des Lexi. il y avait une limite quotidienne d'une certaine somme. Certains utilisateurs allaient dans le jeu pour cliquer sur le bouton pour générer des Lexi. Et après ça, ils ne le dépensaient pas, ils utilisaient juste les fonctionnalités gratuites. Moi, je pensais que les joueurs n'allaient utiliser le bouton de génération que parcequ'ils avaient besoin de faire des achats dans le jeu (plus d'activité de prononciation par exemple), et bien non. Donc ils se sont retrouvé avec des sommes importantes de Lexi non dépensées, ça faussait complétement les statistiques autour de l'économie. En voyant ça, j'ai désactivé la fonctionnalité, ça à entrainé lors arret total de fréquentation. Amusant pour des testeurs.
 
+<!-- à rédiger : ce que montraient les stats, ce que j'en ai tiré (C26, C31) -->
+<!-- à rédiger : Souffle et Voix : décidé à partir des coûts (C31) -->
+
 # Le backend
 
 ## l'architecture
@@ -212,6 +222,10 @@ flowchart LR
 ```
 *Le trajet d'une requête dans l'API, avec l'exemple de la soumission d'un quiz.*
 
+<!-- à rédiger : pourquoi ces couches (C8) -->
+<!-- à rédiger : POO, design patterns (C8) -->
+<!-- à rédiger : monolithe ou microservices (C19) -->
+
 ## Le dictionnaire
 <!-- compétences : C11, C27 -->
 
@@ -231,6 +245,9 @@ A force de tester divers solutions, c'est devenu clair qu'il fallait que mon app
 wiktionnary m'a permis d'importer lemmes, variantes, partOfSpeech, catégories. Le script est optimisé pendant des semaines (points de reprise, journaux, insertions par lots).
 
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
+
+<!-- à rédiger : les chiffres de l'import (C11) -->
+<!-- à rédiger : les index (C11) -->
 
 ## L'authentification
 <!-- compétences : C15 -->
@@ -306,6 +323,11 @@ sequenceDiagram
 ```
 *Une requête protégée, puis le renouvellement du jeton d'accès quand il a expiré.*
 
+<!-- à rédiger : rate limit, helmet, bannissement (C15) -->
+<!-- à rédiger : protection des routes admin (C15) -->
+<!-- à rédiger : le jeton en localStorage et le XSS (C15) -->
+<!-- à rédiger : l'OTP en Math.random, à corriger (C15) -->
+
 ## Les activités côté serveur
 
 ### mémorisation
@@ -332,16 +354,60 @@ Un modèle de transcription convertit l'audio de l'élève en texte, puis le ser
 
 2 moyens de paiements sont implémentés, Stripe et Paypal. les factures PDF numérotées sont générées. Le coût de chaque appel à un modèle est enregistré, pour savoir combien coûte un utilisateur.les prix, plafonds et packs de lexi et de Kos se modifient depuis l'admin, sans redéployer.  
 
+<!-- à rédiger : la sécurité des webhooks de paiement (C15) -->
+<!-- à rédiger : le calcul du coût d'un appel (C31) -->
+
 ## Hébergement et exploitation
 
 <!-- à rédiger : la mise en place du projet sur un VPS -->
-<!-- à rédiger : ci/cd -->
-<!-- à rédiger : la sauvegarde de la base de données sur un hébergeur indépendant -->
+<!-- à rédiger : pourquoi un VPS (C18) -->
+<!-- à rédiger : nginx et pm2 (C9) -->
+<!-- à rédiger : docker et podman (C23) -->
+<!-- à rédiger : ci/cd (C25) -->
+<!-- à rédiger : les logs, la supervision (C20) -->
+<!-- à rédiger : la sauvegarde de la base de données sur un hébergeur indépendant (C13) -->
+<!-- à rédiger : l'incident des sauvegardes de septembre (C13) -->
+<!-- à rédiger : le test de restauration (C13) -->
 <!-- à rédiger : l'interface admin!!!! -->
+
+## La conception de l'API
+
+<!-- à rédiger : les conventions REST (C14) -->
+<!-- à rédiger : swagger (C17) -->
+
+## Les tests
+
+<!-- à rédiger : les tests d'intégration (C16, C34) -->
+<!-- à rédiger : les tests de charge k6 (C16) -->
+<!-- à rédiger : quand les tests tournent (C34) -->
 
 # Le frontend
 
 <!-- à rédiger : expliquer le frontend, en s'appuyant sur ../historique_frontend.md (React/Vite, refonte Lumen, i18n, PWA, SEO, responsive) -->
+<!-- à rédiger : accessibilité, SEO (C1) -->
+<!-- à rédiger : tailwind, responsive (C2, C3) -->
+<!-- à rédiger : axios, renouvellement du jeton, socket.io (C4, C5) -->
+<!-- à rédiger : Context, PWA, i18n (C6) -->
 <!-- à rédiger : la page profil -->
 <!-- à rédiger : les pages légales -->
+
+# Méthode de travail
+
+## L'environnement de développement
+
+<!-- à rédiger : mon environnement de dev (C7) -->
+
+## La conduite du projet
+
+<!-- à rédiger : comment j'ai organisé le projet seul (C29) -->
+
+## Git et les pull requests
+
+<!-- à rédiger : branches et PR (C21, C22) -->
+
+## Qualité du code et documentation
+
+<!-- à rédiger : eslint, prettier, husky (C33) -->
+<!-- à rédiger : la doc du projet (C35) -->
+
 
