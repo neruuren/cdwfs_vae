@@ -39,8 +39,10 @@ Les images sont dans [livret2/images/](livret2/images/) et la mise en page dans 
 ### Générer le PDF
 
 ```bash
-npm install      # une seule fois
-npm run livret   # → build/livret2.pdf
+npm install            # une seule fois
+npm run livret         # → build/livret2.pdf
+npm run livret:watch   # regénère le PDF à chaque modification dans livret2/
+npm run livret:todo    # état d'avancement : ce qui reste à rédiger
 ```
 
 Le script [scripts/build-livret.mjs](scripts/build-livret.mjs) :
@@ -48,7 +50,22 @@ Le script [scripts/build-livret.mjs](scripts/build-livret.mjs) :
 - assemble les fichiers `.md` de `livret2/` dans l'ordre de leur préfixe numérique (`00_`, `10_`, `20_`…) ;
 - génère le sommaire à partir des titres `#` et `##` ;
 - convertit les blocs ` ```mermaid ` en diagrammes (frise chronologique, schéma d'architecture) ;
-- pagine le document avec Paged.js et l'imprime en PDF avec Chrome.
+- remplit le tableau des compétences (voir ci-dessous) ;
+- pagine le document avec Paged.js et l'imprime en PDF avec Chrome ;
+- affiche à la fin le nombre de pages par partie, les compétences sans preuve et les alertes (image introuvable, diagramme Mermaid en erreur). Un diagramme en erreur ne bloque pas le PDF : il y apparaît dans un cadre rouge.
+
+`npm run livret:todo` ([scripts/livret-todo.mjs](scripts/livret-todo.mjs)) liste, partie par partie, les commentaires `<!-- à rédiger … -->`, `<!-- à compléter … -->` et `<!-- capture à fournir … -->`, les sections encore vides, le nombre de mots et les compétences qui n'ont encore aucune preuve.
+
+### Relier une section à des compétences
+
+Sous le titre d'une section qui démontre une ou plusieurs compétences, ajouter une balise :
+
+```markdown
+## L'authentification
+<!-- compétences : C15 -->
+```
+
+Au build, la colonne « Où elle est démontrée » de [50_competences.md](livret2/50_competences.md) est remplie automatiquement avec un lien vers chaque section balisée et son numéro de page. La balise s'applique au titre qui la précède, quel que soit son niveau. Si la cellule contient déjà du texte écrit à la main, les liens sont ajoutés à la suite.
 
 Chrome est détecté automatiquement. Sinon, définir la variable `CHROME_PATH`.
 

@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "livret": "node scripts/build-livret.mjs"
+    "livret": "node scripts/build-livret.mjs",
+    "livret:watch": "node scripts/build-livret.mjs --watch",
+    "livret:todo": "node scripts/livret-todo.mjs"
   },
   "devDependencies": {
     "markdown-it": "^15.0.3",

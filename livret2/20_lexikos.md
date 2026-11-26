@@ -162,6 +162,7 @@ J'avais mis dès le départ le bouton pour les pionniers pour générer des Lexi
 # Le backend
 
 ## l'architecture
+<!-- compétences : C8, C19 -->
 
 L'API REST Express est découpée en routes, controllers, services, modèles.  
 Les routes définissent tous les endpoints de l'API, elles permettent de lier une URL à un controller. Elles indiquent aussi quels contrôles passer avant le controller (les middlewares) : être connecté, ne pas dépasser le nombre de requêtes autorisées.  
@@ -212,6 +213,7 @@ flowchart LR
 *Le trajet d'une requête dans l'API, avec l'exemple de la soumission d'un quiz.*
 
 ## Le dictionnaire
+<!-- compétences : C11, C27 -->
 
 ### Premiers POC : l'utilisateur saisit ses mots
 
@@ -231,6 +233,7 @@ wiktionnary m'a permis d'importer lemmes, variantes, partOfSpeech, catégories. 
 Le dictionnaire ainsi que la stack technique étant en place, j'avais des bases solides pour continuer à avancer sur le projet. 
 
 ## L'authentification
+<!-- compétences : C15 -->
 
 L'authentification repose sur deux mécanismes : un code à usage unique (OTP) envoyé par e-mail pour se connecter, puis des jetons JWT pour rester connecté.
 
@@ -325,6 +328,7 @@ Un modèle de transcription convertit l'audio de l'élève en texte, puis le ser
 <!-- à rédiger : la conversation côté serveur -->
 
 ## Paiements et suivi des coûts
+<!-- compétences : C31 -->
 
 2 moyens de paiements sont implémentés, Stripe et Paypal. les factures PDF numérotées sont générées. Le coût de chaque appel à un modèle est enregistré, pour savoir combien coûte un utilisateur.les prix, plafonds et packs de lexi et de Kos se modifient depuis l'admin, sans redéployer.  
 
