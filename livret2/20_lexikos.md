@@ -85,7 +85,6 @@ j'ai utilisé dès le début git et un repo github, c'est, je trouve une des cho
 J'ai dans mon entourage plusieurs personnes désireuses d'apprendre une langue étrangère. je voulais que dès le départ ma solution propose plusieurs langues. Mais je ne voulais en proposer trop d'un coup pour ne pas me surcharger. Je me suis dis que 4 langues suffiraient au départ. quitte à en rajouter plus tard. Les 4 langues de base sont le Français, l'Anglais, l'Espagnol, l'Allemand. L'idée c'est que ce soit utilisable dans n'importe quelle combinaison. Par exempe, un Allemand peut y apprendre l'Espagnol. L'interface est écrite dans la langue maternelle de l'utilisateur (la landing page s'affiche dans la langue du navigateur avec un fallback sur l'anglais, puis le user sélectionne sa langue maternelle lors de la création de son compte).  
 avec les 4 langues combinées, il y 5,3 Million de mots racine qui sont liés à des variations (conjugaisons, divers formes grammaticales), ainsi qu'à des traductions. Le dictionnaire installé est donc très complet.  
 
-<!-- capture à fournir : recherche d'un mot dans le dictionnaire et ajout à son vocabulaire -->
 ![Ajout d'un mot au vocabulaire](images/lexikos_ajout_mot.png)
 *Recherche d'un mot dans le dictionnaire et ajout à son vocabulaire.*
 
@@ -99,7 +98,6 @@ Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse
 
 <!-- à rédiger : combien de users, comment j'ai eu leurs retours (C26) -->
 
-<!-- capture à fournir : écran de saisie du code OTP (avec le mail reçu si possible) -->
 ![Connexion par code OTP](images/lexikos_connexion_otp.png)
 *Connexion sans mot de passe : le code reçu par e-mail.*
 
@@ -110,7 +108,6 @@ Les users n'ont pas de password à retenir. un code OTP est envoyé à l'adresse
 Le choix des mots : les mots à réviser passent en priorité. Les mots déjà maîtrisés ne reviennent que pour un contrôle de temps en temps.  
 La correction : les petites fautes de frappe sont tolérées. une réponse juste fait monter la jauge 'écrit' du mot (de 0 à 10), une réponse fausse la fait baisser.
 
-<!-- capture à fournir : une question de quiz avec sa correction -->
 ![Activité de mémorisation](images/lexikos_quiz.png)
 *Une question du quiz de mémorisation et sa correction.*
 
@@ -140,7 +137,6 @@ Série (streak) : on enchaîne les jours d'activité. Une série cassée peut ê
 Badges : ils sont attribués selon des seuils (nombre de quiz, mots maîtrisés…).
 Saisons : un classement remis à zéro toutes les 2 semaines.
 
-<!-- capture à fournir : profil avec XP/niveau, série, badges, classement de saison -->
 ![Gamification](images/lexikos_gamification.png)
 *Niveau, série, badges et classement de la saison.*
 
@@ -156,7 +152,6 @@ les deux réserves d'énergie se renouvellent toutes seules avec le temps, mais 
 
 <!-- à rédiger : la boutique -->
 
-<!-- capture à fournir : boutique Lexi/Kos et réserves d'énergie Souffle/Voix -->
 ![La boutique](images/lexikos_boutique.png)
 *La boutique : packs de Lexi et de Kos, réserves de Souffle et de Voix.*
 
